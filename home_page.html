@@ -87,11 +87,10 @@
             </div>
 
             <!-- ----------------------------------------------------------PARTE CENTRALE---------------------------------------------------------- -->
-            <div class="col col-12 col-md-8 p-0 pt-2" id="middle">
+            <div class="col col-12 col-md-8 p-0" id="middle">
                 <main id="box1">
                     <section id="section_1" class="section">
-                        <div class="top d-flex align-items-center justify-content-between">
-        
+                        <div class="d-flex align-items-center justify-content-between bg-dark py-2 sticky-top">
                                 <div class="arrow__Btns ms-3">
                                     <button type="button" class="bg-dark text-white border-0 rounded-circle"><i class="bi bi-chevron-left"></i></button>
                                     <button type="button" class="bg-dark text-white border-0 rounded-circle"><i class="bi bi-chevron-right"></i></button>
@@ -115,12 +114,12 @@
                             </div>
                         </div>
 
-                        <div class="album_in_evidenza mt-2 mx-2">
+                        <div class="album_in_evidenza mt-2 mx-2 bg-warning">
                             <div class="img_testi">
                                 <img class="img_singolo_in_evidenza m-2" src="https://picsum.photos/200" alt="#" />
 
                                 <div class="testi">
-                                    <p class="titolo_album_in_evidenza mt-2">Album</p>
+                                    <p class="titolo_album_in_evidenza mt-2 fs-1">Album</p>
                                     <p class="titolo_singolo_in_evidenza"></p>
                                     <p class="autore_singolo_in_evidenza"></p>
                                     <p>
@@ -186,12 +185,14 @@
                     </div>
 
                     <section id="section_2" class="section">
-                        <div class="testi mx-2">
-                            <p class="mt-2">Altro di ciò che ti piace</p>
-                            <span>Visualizza tutto</span>
+                        <div class="testi mx-2 mt-4 mb-2">
+                            <p class="align-self-center m-0">Altro di ciò che ti piace</p>
+                            <span class="align-self-center">Visualizza tutto</span>
                         </div>
                         <div class="containerCards d-flex justify-content-around flex-wrap mb-4">
-                            <div class="cardsHome m-1">
+                            <div class="row" id="row_rock"></div>
+                            <div class="row" id="row_pop"></div>
+                            <!-- <div class="cardsHome m-1">
                                 <div class="item">
                                     <img src="https://picsum.photos/200" />
                                     <div class="play">
@@ -270,7 +271,7 @@
                                     <h4>Titolo Prova</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="altri_preferiti"></div>
                     </section>
@@ -388,7 +389,7 @@
         </div>
         <!-- end of player bar schermi piccoli -->
     </footer>
-
+    <script src="assets/JS/homepage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>

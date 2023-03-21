@@ -24,10 +24,9 @@ displayDataRock = function(data) {
     rowReference.innerHTML = ''
     for (i=0; i<data.length && i<6; i++) {
         let newCol = document.createElement('div');
-        newCol.classList.add('col-md-2');
         newCol.innerHTML = `
-        <div class="cardsHome m-1">
-                                <div class="item">
+        <div class="cardsHome m-1 h-100">
+                                <div class="item h-100">
                                     <img src=${data[i].album.cover_medium} class="width:100px"/>
                                     <div class="play">
                                         <i class="bi bi-play-fill"></i>
@@ -47,11 +46,10 @@ displayDataPop = function(data) {
     rowReference.innerHTML = ''
     for (i=0; i<data.length && i<6; i++) {
         let newCol = document.createElement('div');
-        newCol.classList.add('col-md-2');
         newCol.innerHTML = `
-        <div class="cardsHome m-1">
-                                <div class="item">
-                                    <img src=${data[i].album.cover_medium} style="width:150px" />
+        <div class="cardsHome m-1 h-100">
+                                <div class="item h-100">
+                                    <img src=${data[i].album.cover_medium} style="width:130px" />
                                     <div class="play">
                                         <i class="bi bi-play-fill"></i>
                                     </div>

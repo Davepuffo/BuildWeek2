@@ -254,6 +254,31 @@ main #section_2 .testi {
     font-size: 10px;
 }
 
+/* ----------------------------------------------------------Cards rettangolari fisse---------------------------------------------------------- */
+
+.gallery-vertical{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery-card-vertical {
+    height: 50px;
+    width: 300px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(112, 112, 112, 0.226);    
+    margin: 8px;
+}
+
+.gallery-card-vertical-img {
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+}
+
 /* ----------------------------------------------------------CARDS effetto hoover---------------------------------------------------------- */
 .cardsHome .item {
     min-width: 140px;

@@ -3,21 +3,21 @@ let URL_pop = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=pop'
 let i = 0;
 /* SALUTO AUTOMATICO*/
 let contenitore = document.querySelector('#saluto');
-        const ora = new Date().getHours();
-        console.log(ora);
+const ora = new Date().getHours();
+console.log(ora);
 
-        function generaSaluto(orario){
-     if (orario < 5) {
-            contenitore.innerText = 'Buonanotte';
-        } else if(orario < 12) {
-            contenitore.innerText = 'Buongiorno, ben risvegliato';
-        }else if(orario < 19) {
-            contenitore.innerText = 'Buon Pomeriggio ';
-        }else{
-            contenitore.innerText = 'Buonasera';
-        }
+function generaSaluto(orario) {
+    if (orario < 5) {
+        contenitore.innerText = 'Buonanotte';
+    } else if (orario < 12) {
+        contenitore.innerText = 'Buongiorno, ben risvegliato';
+    } else if (orario < 19) {
+        contenitore.innerText = 'Buon Pomeriggio ';
+    } else {
+        contenitore.innerText = 'Buonasera';
     }
-    window.addEventListener(onload, generaSaluto(ora));
+}
+window.addEventListener(onload, generaSaluto(ora));
 
 displayDataRock = function (data) {
     let rowReference = document.getElementById('row_rock')
@@ -35,7 +35,6 @@ displayDataRock = function (data) {
                                     <p>${data[i].album.title}</p>
                                 </div>
                             </div>
-
         `;
         rowReference.appendChild(newCol);
     }

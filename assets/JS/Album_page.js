@@ -5,6 +5,7 @@ console.log('Id', albumId)
 
 const showAlbum = function (album) {
     let albumBody = document.getElementsByClassName('album__body')[0]
+    console.log(albumBody)
     albumBody.innerHTML = `<div><img class="album__img shadow-lg img-fluid" src="${album.cover_medium}" alt="${album.title}">
 </div>
 <div class="ms-2 mt-3">

@@ -240,7 +240,7 @@ main #section_2 .testi {
     color: #686868;
 }
 
-#saluto{
+#saluto {
     padding-left: 0.9em;
     margin-bottom: 0;
     padding-top: 1em;
@@ -263,7 +263,7 @@ main #section_2 .testi {
 
 /* ----------------------------------------------------------Cards rettangolari fisse---------------------------------------------------------- */
 
-.gallery-vertical{
+.gallery-vertical {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -276,7 +276,7 @@ main #section_2 .testi {
     font-size: 11px;
     display: flex;
     align-items: center;
-    background-color: rgba(112, 112, 112, 0.226);    
+    background-color: rgba(112, 112, 112, 0.226);
     margin: 8px;
 }
 
@@ -426,7 +426,6 @@ i {
     .song__time,
     .album__album,
     .anno__ril,
-    .nr__canzoni,
     .three__dots {
         display: none;
     }

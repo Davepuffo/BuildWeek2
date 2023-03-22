@@ -16,7 +16,8 @@
     <div class="container-fluid">
         <div class="row">
             <!-- ----------------------------------------------------------PARTE SINISTRA---------------------------------------------------------- -->
-            <div class="col d-none d-sm-block d-sm-none d-md-block col-2 bg-black pt-2 pe-0" id="left">
+            <div class="col d-none d-sm-block d-sm-none d-md-block col.md-3 col-2 col-md-3 col-lg-2 bg-black pt-2 pe-0"
+                id="left">
                 <div class="" id="fixedList">
                     <ul class="list-unstyled ms-2">
                         <li class="mb-2"><a href="" class="text-decoration-none text-light"><i
@@ -90,17 +91,7 @@
             <div class="col col-12 col-md-8 p-0 pt-2" id="middle">
                 <div class="container">
                     <div class="row flex-column">
-                        <div class="col d-flex flex-column justify-content-end">
-                            <p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="blue"
-                                    class="bi bi-patch-check-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
-                                </svg>
-                                Artista verificato
-                            </p>
-                            <h1 class="mb-4">ARTISTA.NAME</h1>
-                            <p>artista.visualizzazioni</p>
+                        <div class="col d-flex flex-column justify-content-end " id="titoloArtista">
                         </div>
                         <div class="col">
                             <div class="my-4">
@@ -111,9 +102,9 @@
                                     </svg></a>
                                 <p class="border d-inline py-2 px-3 mx-4">FOLLOWING</p>
                                 <div class="btn-group">
-                                    <button class="btn btn-secondary btn-sm" type="button" data-bs-toggle="dropdown"
+                                    <button class="bg-black border-0" type="button" data-bs-toggle="dropdown"
                                         aria-expanded="true">
-                                        ...
+                                        <span class="menu_pulsanti">&middot;&middot;&middot;</span>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Action</a></li>
@@ -125,86 +116,34 @@
                                 </div>
                             </div>
                             <div class="row">
+
                                 <div class="col-12 col-lg-8">
                                     <h3 class="mb-4">Popolari</h3>
+                                    <ol id="listaCanzoni">
 
-                                    <button class="w-100 bg-dark text-white border border-0">
-                                        <div class="row align-items-center my-2">
-                                            <div class="col-1 text-center">1</div>
-                                            <div class="col-1 d-flex justify-content-center">
-                                                <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61Ixi8cSCfL._AC_SY355_.jpg"
-                                                    alt="" height="40px" />
-                                            </div>
-                                            <div
-                                                class="col-8 text-start d-flex justify-content-between align-items-center">
-                                                <p class="m-0">titolo canzone</p>
-                                                <p class="m-0">visualizzazioni</p>
-                                            </div>
-                                            <div class="col-2 text-end">3:32</div>
-                                        </div>
-                                    </button>
-                                    <div class="row align-items-center my-2">
-                                        <div class="col-1 text-center">2</div>
-                                        <div class="col-1 text-center">
-                                            <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61Ixi8cSCfL._AC_SY355_.jpg"
-                                                alt="" height="40px" />
-                                        </div>
-                                        <div class="col-6">titolo canzone</div>
-                                        <div class="col-2">visualizzazioni</div>
-                                        <div class="col-2 text-end">3:32</div>
-                                    </div>
-                                    <div class="row align-items-center my-2">
-                                        <div class="col-1 text-center">3</div>
-                                        <div class="col-1 text-center">
-                                            <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61Ixi8cSCfL._AC_SY355_.jpg"
-                                                alt="" height="40px" />
-                                        </div>
-                                        <div class="col-6">titolo canzone</div>
-                                        <div class="col-2">visualizzazioni</div>
-                                        <div class="col-2 text-end">3:32</div>
-                                    </div>
-                                    <div class="row align-items-center my-2">
-                                        <div class="col-1 text-center">4</div>
-                                        <div class="col-1 text-center">
-                                            <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61Ixi8cSCfL._AC_SY355_.jpg"
-                                                alt="" height="40px" />
-                                        </div>
-                                        <div class="col-6">titolo canzone</div>
-                                        <div class="col-2">visualizzazioni</div>
-                                        <div class="col-2 text-end">3:32</div>
-                                    </div>
-                                    <div class="row align-items-center my-2">
-                                        <div class="col-1 text-center">5</div>
-                                        <div class="col-1 text-center">
-                                            <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61Ixi8cSCfL._AC_SY355_.jpg"
-                                                alt="" height="40px" />
-                                        </div>
-                                        <div class="col-6">titolo canzone</div>
-                                        <div class="col-2">visualizzazioni</div>
-                                        <div class="col-2 text-end">3:32</div>
-                                    </div>
+                                    </ol>
                                     <p class="my-4"><strong>VISUALIZZA ALTRO</strong></p>
+
                                 </div>
+
+
                                 <div class="col-12 col-lg-4">
-                                    <div class="row">
-                                        <h3 class="mb-4 fs-5">Brani che ti piacciono</h3>
-                                        <div class="col-4 text-center">
-                                            <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61Ixi8cSCfL._AC_SY355_.jpg"
-                                                alt="" height="20%" />
-                                        </div>
-                                        <div class="col-8">
-                                            <p>Hai messo Mi piace a 11 brani</p>
-                                            <p>di ARTISTA.NAME</p>
-                                        </div>
+                                    <h3 class="mb-4 fs-5">Brani che ti piacciono</h3>
+                                    <div class="row" id="likeArtista">
+
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <h3>Scopri la discografia dell'artista</h3>
+                        <div class="row" id="listaAlbum">
+
                         </div>
                     </div>
                 </div>
             </div>
             <!-- ----------------------------------------------------------PARTE DESTRA---------------------------------------------------------- -->
-            <div class="col d-none d-sm-block d-sm-none d-md-block col-2 bg-black pt-2" id="right">
+            <div class="col d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block col-2 bg-black pt-2" id="right">
                 <div class="d-flex justify-content-between">
                     <p class="fw-bolder">Attività amici</p>
                     <div>
@@ -315,10 +254,11 @@
         </div>
         <!-- end of player bar schermi piccoli -->
     </footer>
-
+    <script src="./assets/JS/artistPage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>

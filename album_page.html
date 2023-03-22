@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Album Page Spotify</title>
-    <link rel="shortcut icon" href="https://www.freeiconspng.com/uploads/spotify-icon-18.png"/>
+    <link rel="shortcut icon" href="https://www.freeiconspng.com/uploads/spotify-icon-18.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -16,7 +16,8 @@
     <div class="container-fluid">
         <div class="row">
             <!-- ----------------------------------------------------------PARTE SINISTRA---------------------------------------------------------- -->
-            <div class="col d-none d-sm-block d-sm-none d-md-block col-2 bg-black pt-2 pe-0" id="left">
+            <div class="col d-none d-sm-block d-sm-none d-md-block col.md-3 col-2 col-md-3 col-lg-2 bg-black pt-2 pe-0"
+                id="left">
                 <div class="" id="fixedList">
                     <ul class="list-unstyled ms-2">
                         <li class="mb-2"><a href="" class="text-decoration-none text-light"><i
@@ -87,9 +88,9 @@
             </div>
 
             <!-- ----------------------------------------------------------PARTE CENTRALE---------------------------------------------------------- -->
-            <div class="col col-12 col-md-8 p-0" id="middle">
+            <div class="col col-12 col-md-9 col-lg-8 p-0" id="middle">
                 <div class="middleAlbumPage">
-                    <div class="user__Bar user__BarAlbumPage d-flex justify-content-between align-items-center py-2 sticky-top">
+                    <!-- <div class="user__Bar user__BarAlbumPage d-flex justify-content-between align-items-center py-2 sticky-top">
                         <div class="arrow__Btns ms-3">
                             <button type="button" class="bg-dark text-white border-0 rounded-circle"><i
                                     class="bi bi-chevron-left"></i></button>
@@ -101,11 +102,38 @@
                             <p class="text-white m-0">nome dell'utente</p>
                             <i class="bi bi-caret-down-fill mx-1 text-white"></i>
                         </div>
+                    </div> -->
+                    <div
+                        class="user__Bar user__BarAlbumPage d-flex justify-content-between align-items-center py-2 sticky-top">
+                        <div class="arrow__Btns ms-3">
+                            <button type="button" class="bg-dark text-white border-0 rounded-circle"><i
+                                    class="bi bi-chevron-left"></i></button>
+                            <button type="button" class="bg-dark text-white border-0 rounded-circle"><i
+                                    class="bi bi-chevron-right"></i></button>
+                        </div>
+
+                        <div class="dropdown d-flex align-items-center me-2">
+                            <button
+                                class="btn btn-sm btn-sm-secondary dropdown-toggle btn-rounded p-3 d-flex align-items-center"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://picsum.photos/200" class="rounded-circle me-2 d-none d-md-inline"
+                                    alt="Immagine" style="width: 25px; height: 25px" />
+                                Team 6 Epicode
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                
+
                     <!-- ⬇️current album⬇️ -->
-                    <div class="album__body ms-3 d-flex mt-5 text-white">
-                        <div><img class="album__img shadow-lg img-fluid" src="https://place.dog/150/160" alt="foto artista">
+                    <div class="album__body ms-1 d-flex mt-5 text-white"><!--
+                        <div><img class="album__img shadow-lg img-fluid" src="https://place.dog/150/160"
+                                alt="foto artista">
                         </div>
                         <div class="ms-2 mt-3">
                             <p class="album__album fw-bolder">Album</p>
@@ -115,14 +143,15 @@
                                     <img class="rounded-circle mx-1" src="https://place.dog/40/30" alt="user image">
                                     <p>Nome artista -</p>
                                     <p class="anno__ril">anno rilascio -</p>
-                                    <p class=" nr__canzoni">nr canzoni , <span class="opacity-50 small"> minuti e secondi totali</span>
+                                    <p class=" nr__canzoni">nr canzoni , <span class="opacity-50 small"> minuti e
+                                            secondi totali</span>
                                     </p>
                                 </div>
                                 <p class="album__annoR d-sm-none">Album - <span>anno rilascio</span></p>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
-                
+
                     <!-- ⬇️playlist + upper icons⬇️-->
                     <div class="container-fluid mt-3">
                         <div class="row">
@@ -139,15 +168,16 @@
                                     <i class="bi bi-three-dots-vertical mx-2 text-white opacity-75 d-sm-none"></i>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="green"
-                                            class="bi bi-play-circle-fill d-block d-sm-none" viewBox="0 0 16 16">
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                                            fill="green" class="bi bi-play-circle-fill d-block d-sm-none"
+                                            viewBox="0 0 16 16">
                                             <path
                                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
                                         </svg></a>
                                 </div>
                             </div>
                             <div class="container div__container mt-1">
-                                <div class="row">
+                                <div class="row" id="allSongs">
                                     <div
                                         class="col-12 d-flex justify-content-between border-bottom border-2 border-white border-opacity-25 text-white opacity-75 small">
                                         <div class="col-7">
@@ -159,7 +189,7 @@
                                         <div class="col-1">
                                             <i class="bi bi-clock"></i>
                                         </div>
-                                    </div>
+                                    </div><!--
                                     <div class="col-12 d-flex te">
                                         <div class="col-7">
                                             <div class="artist__title d-flex align-items-center">
@@ -379,7 +409,7 @@
                                             <p class="song__time">5:00</p>
                                         </div>
                 
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -387,7 +417,7 @@
                 </div>
             </div>
             <!-- ----------------------------------------------------------PARTE DESTRA---------------------------------------------------------- -->
-            <div class="col d-none d-sm-block d-sm-none d-md-block col-2 bg-black pt-2" id="right">
+            <div class="col d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block col-2 bg-black pt-2" id="right">
                 <div class="d-flex justify-content-between">
                     <p class="fw-bolder">Attività amici</p>
                     <div>
@@ -502,6 +532,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+    <script src="./assets/JS/Album_page.js"></script>
 </body>
 
 </html>

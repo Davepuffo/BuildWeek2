@@ -1,5 +1,6 @@
 let URL_rock = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=rock'
 let URL_pop = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=pop'
+let URL_indie = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=indie'
 let i = 0;
 /* SALUTO AUTOMATICO*/
 let contenitore = document.querySelector('#saluto');
@@ -24,14 +25,15 @@ displayDataRock = function (data) {
     rowReference.innerHTML = ''
     for (i = 0; i < data.length && i < 6; i++) {
         let newCol = document.createElement('div');
+        newCol.className += " col col-12 col-md-4 col-lg-3 col-xxl-2 d-flex justify-content-center"
         newCol.innerHTML = `
-        <div class="cardsHome m-1 h-100">
-                                <div class="item h-100">
-                                    <img src=${data[i].album.cover_medium} class="width:100px"/>
+        <div class="cardsHome my-2">
+                                <div class="item">
+                                    <img src=${data[i].album.cover_medium} class=""/>
                                     <div class="play">
                                         <i class="bi bi-play-fill"></i>
                                     </div>
-                                    <a href="./artist_page.html?id=${data[i].artist.id}"><h4>${data[i].artist.name}</h4></a>
+                                    <a href="./artist_page.html?id=${data[i].artist.id}" class="text-decoration-none text-light"><h4>${data[i].artist.name}</h4></a>
                                     <p>${data[i].album.title}</p>
                                 </div>
                             </div>
@@ -46,14 +48,38 @@ displayDataPop = function (data) {
     rowReference.innerHTML = ''
     for (i = 0; i < data.length && i < 6; i++) {
         let newCol = document.createElement('div');
+        newCol.className += " col col-12 col-md-4 col-lg-3 col-xxl-2 d-flex justify-content-center"
         newCol.innerHTML = `
-        <div class="cardsHome m-1 h-100">
-                                <div class="item h-100">
-                                    <img src=${data[i].album.cover_medium} style="width:130px" />
+        <div class="cardsHome my-2">
+                                <div class="item">
+                                    <img src=${data[i].album.cover_medium} style=""/>
                                     <div class="play">
                                         <i class="bi bi-play-fill"></i>
                                     </div>
-                                    <a href="./artist_page.html"><h4>${data[i].artist.name}</h4></a>
+                                    <a href="./artist_page.html?id=${data[i].artist.id}" class="text-decoration-none text-light"><h4>${data[i].artist.name}</h4></a>
+                                    <p>${data[i].album.title}</p>
+                                </div>
+                            </div>
+
+        `;
+        rowReference.appendChild(newCol);
+    }
+}
+
+displayDataIndie = function (data) {
+    let rowReference = document.getElementById('row_indie')
+    rowReference.innerHTML = ''
+    for (i = 0; i < data.length && i < 6; i++) {
+        let newCol = document.createElement('div');
+        newCol.className += " col col-12 col-md-4 col-lg-3 col-xxl-2 d-flex justify-content-center"
+        newCol.innerHTML = `
+        <div class="cardsHome my-2">
+                                <div class="item">
+                                    <img src=${data[i].album.cover_medium} style=""/>
+                                    <div class="play">
+                                        <i class="bi bi-play-fill"></i>
+                                    </div>
+                                    <a href="./artist_page.html?id=${data[i].artist.id}" class="text-decoration-none text-light"><h4>${data[i].artist.name}</h4></a>
                                     <p>${data[i].album.title}</p>
                                 </div>
                             </div>
@@ -102,6 +128,26 @@ const getDataPop = function () {
 }
 
 getDataPop()
+
+
+const getDataIndie = function () {
+    fetch(URL_indie)
+        .then((response) => {
+            if (response.ok) {
+                return response.json()
+            } else {
+                return new Error('Errore nella gestione della chiamata')
+            }
+        })
+        .then((data) => {
+            displayDataIndie(data.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+}
+
+getDataIndie()
 
 
 //codice icona volume

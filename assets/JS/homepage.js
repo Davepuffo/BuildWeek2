@@ -1,6 +1,11 @@
 let URL_rock = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=rock'
 let URL_pop = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=pop'
 let i = 0;
+
+
+
+
+
 /* SALUTO AUTOMATICO*/
 let contenitore = document.querySelector('#saluto');
         const ora = new Date().getHours();
@@ -102,3 +107,7 @@ displayDataPop(data.data)
 }
 
 getDataPop()
+
+
+
+

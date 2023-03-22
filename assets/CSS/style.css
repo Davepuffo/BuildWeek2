@@ -266,14 +266,6 @@ main #section_2 .testi {
 }
 
 /* ----------------------------------------------------------Cards rettangolari fisse---------------------------------------------------------- */
-
-.gallery-vertical {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
 .gallery-card-vertical {
     height: 50px;
     width: 300px;

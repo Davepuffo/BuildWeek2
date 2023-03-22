@@ -44,8 +44,12 @@ body {
 
 /* ----------------------------------------------------------scrollbar middle---------------------------------------------------------- */
 #middle {
-    height: 90vh;
+    height: 100vh;
     overflow: auto;
+}
+
+#section_2 {
+    padding-bottom: 100px !important;
 }
 
 /* ----------------------------------------------------------parte centrale---------------------------------------------------------- */
@@ -262,14 +266,6 @@ main #section_2 .testi {
 }
 
 /* ----------------------------------------------------------Cards rettangolari fisse---------------------------------------------------------- */
-
-.gallery-vertical {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
 .gallery-card-vertical {
     height: 50px;
     width: 300px;
@@ -288,9 +284,8 @@ main #section_2 .testi {
 
 /* ----------------------------------------------------------CARDS effetto hoover---------------------------------------------------------- */
 .cardsHome .item {
-    min-width: 140px;
-    width: 160px;
-    padding: 15px;
+    height: 100%;
+    padding: 10px;
     background-color: #181818;
     border-radius: 6px;
     cursor: pointer;

@@ -609,3 +609,7 @@ header nav ul{
         border-radius: 10px;
       }
 }
+
+#listaAlbum {
+    margin-bottom: 100px;
+}

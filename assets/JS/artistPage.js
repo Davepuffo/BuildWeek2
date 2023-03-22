@@ -3,7 +3,9 @@ const artistaId = new URLSearchParams(window.location.search).get("id")
 
 const inserisciTitolo = function (artist) {
     let prendiTesto = document.getElementById('titoloArtista')
-    prendiTesto.innerHTML = `<p>
+    prendiTesto.style.backgroundImage = `"ARTISTA_URL(${artist.picture})"`;
+    prendiTesto.innerHTML = `
+    <p>
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="blue"
         class="bi bi-patch-check-fill" viewBox="0 0 16 16">
         <path
@@ -11,8 +13,17 @@ const inserisciTitolo = function (artist) {
     </svg>
     Artista verificato
 </p>
-<h1>${artist.name}</h1>
+</div>
+<h1 class="z-index-1">${artist.name}</h1>
 <p>${artist.nb_fan} ascoltatori mensili</p>`
+    let likeArtista = document.getElementById('likeArtista')
+    likeArtista.innerHTML = `
+    <div class="col-4 text-center">
+    <img src="${artist.picture_medium}" alt="" height="80px" />
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Hai messo Mi piace a 11 brani a ${artist.name}</p>
+                                        </div>`
 }
 
 const inserisciCanzoni = function (canzone) {
@@ -20,7 +31,7 @@ const inserisciCanzoni = function (canzone) {
     canzone.forEach(element => {
         let newSong = document.createElement('li');
         newSong.innerHTML = `
-        <button class="w-100 bg-dark text-white border border-0">
+        <button class="w-100 bg-black text-white border border-0">
         <div class="row align-items-center my-2">
             <div class="col-2 d-flex justify-content-center">
                 <img src="${element.album.cover_small}"
@@ -31,7 +42,7 @@ const inserisciCanzoni = function (canzone) {
                 <p class="m-0">${element.title}</p>
                 <p class="m-0">${element.rank}</p>
             </div>
-            <div class="col-2 text-end">${element.duration}</div>
+            <div class="col-2 text-end">${Math.floor(element.duration / 60)}</div>
         </div>
     </button>
         `;
@@ -39,12 +50,52 @@ const inserisciCanzoni = function (canzone) {
     });
 }
 
+const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+
+const riempiAlbum = function (album) {
+    const prendiLista = document.getElementById('listaAlbum')
+    console.log(prendiLista)
+    for (i = 0; i < album.length && i < 6; i++) {
+        let newAlbum = document.createElement('div');
+        newAlbum.className += " col col-12 col-md-4 col-lg-3 col-xxl-2 d-flex justify-content-center  mb-2"
+        newAlbum.innerHTML = `
+        <div class="cardsHome  h-100">
+                                <div class="item h-100">
+                                <a href="./album_page.html?id=${album[i].album.id}" class="text-decoration-none text-light">
+                                    <img src=${album[i].album.cover_medium} class=""/>
+                                    <div class="play">
+                                        <i class="bi bi-play-fill"></i>
+                                    </div>
+                                    <p>${album[i].album.title}</p></a>
+                                </div>
+                            </div>   
+            `;
+        prendiLista.appendChild(newAlbum);
+    }
+}
+
+const albumArtista = function (album) {
+    fetch(urlAlbum + `${album.name}`)
+        .then((response3) => {
+            return response3.json()
+        })
+        .then((data3) => {
+            console.log(data3)
+            riempiAlbum(data3.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+}
+
+
 fetch(ARTISTA_URL + artistaId)
     .then((response) => {
         return response.json()
     })
     .then((data) => {
         inserisciTitolo(data)
+        albumArtista(data)
     })
     .catch((err) => {
         console.log(err)
@@ -61,7 +112,6 @@ fetch(ARTISTA_URL + artistaId)
                 return response2.json()
             })
             .then((data2) => {
-                console.log(data2.data)
                 return data2.data
             })
             .then((song) => {

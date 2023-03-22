@@ -16,7 +16,8 @@
     <div class="container-fluid">
         <div class="row">
             <!-- ----------------------------------------------------------PARTE SINISTRA---------------------------------------------------------- -->
-            <div class="col d-none d-sm-block d-sm-none d-md-block col-2 bg-black pt-2 pe-0" id="left">
+            <div class="col d-none d-sm-block d-sm-none d-md-block col.md-3 col-2 col-md-3 col-lg-2 bg-black pt-2 pe-0"
+                id="left">
                 <div class="" id="fixedList">
                     <ul class="list-unstyled ms-2">
                         <li class="mb-2"><a href="" class="text-decoration-none text-light"><i
@@ -88,36 +89,9 @@
 
             <!-- ----------------------------------------------------------PARTE CENTRALE---------------------------------------------------------- -->
             <div class="col col-12 col-md-8 p-0 pt-2" id="middle">
-                <!-- aggiunta bar in alto -->
-                <div class="d-flex align-items-center justify-content-between bg-dark py-2 sticky-top">
-                    <div class="arrow__Btns ms-3">
-                        <button type="button" class="bg-dark text-white border-0 rounded-circle"><i
-                                class="bi bi-chevron-left"></i></button>
-                        <button type="button" class="bg-dark text-white border-0 rounded-circle"><i
-                                class="bi bi-chevron-right"></i></button>
-                    </div>
-
-                    <div class="dropdown d-flex align-items-center me-2">
-                        <button
-                            class="btn btn-sm btn-sm-secondary dropdown-toggle btn-rounded p-3 d-flex align-items-center"
-                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://picsum.photos/200" class="rounded-circle me-2 d-none d-md-inline"
-                                alt="Immagine" style="width: 25px; height: 25px" />
-                            Team 6 Epicode
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- fine bar in alto -->
                 <div class="container">
                     <div class="row flex-column">
-                        <div class="col d-flex flex-column justify-content-end" id="titoloArtista">
+                        <div class="col d-flex flex-column justify-content-end " id="titoloArtista">
                         </div>
                         <div class="col">
                             <div class="my-4">
@@ -128,9 +102,9 @@
                                     </svg></a>
                                 <p class="border d-inline py-2 px-3 mx-4">FOLLOWING</p>
                                 <div class="btn-group">
-                                    <button class="btn btn-secondary btn-sm" type="button" data-bs-toggle="dropdown"
+                                    <button class="bg-black border-0" type="button" data-bs-toggle="dropdown"
                                         aria-expanded="true">
-                                        ...
+                                        <span class="menu_pulsanti">&middot;&middot;&middot;</span>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Action</a></li>
@@ -142,63 +116,34 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <h3 class="mb-4">Popolari</h3>
+
                                 <div class="col-12 col-lg-8">
+                                    <h3 class="mb-4">Popolari</h3>
                                     <ol id="listaCanzoni">
 
                                     </ol>
                                     <p class="my-4"><strong>VISUALIZZA ALTRO</strong></p>
 
-                                    <!-- <button class="w-100 bg-dark text-white border border-0">
-                                        <div class="row align-items-center my-2">
-                                            <div class="col-1 text-center">1</div>
-                                            <div class="col-1 d-flex justify-content-center">
-                                                <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61Ixi8cSCfL._AC_SY355_.jpg"
-                                                    alt="" height="40px" />
-                                            </div>
-                                            <div
-                                                class="col-8 text-start d-flex justify-content-between align-items-center">
-                                                <p class="m-0">titolo canzone</p>
-                                                <p class="m-0">visualizzazioni</p>
-                                            </div>
-                                            <div class="col-2 text-end">3:32</div>
-                                        </div>
-                                    </button>
-
-
-                                    <div class="row align-items-center my-2">
-                                        <div class="col-1 text-center">2</div>
-                                        <div class="col-1 text-center">
-                                            <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61Ixi8cSCfL._AC_SY355_.jpg"
-                                                alt="" height="40px" />
-                                        </div>
-                                        <div class="col-6">titolo canzone</div>
-                                        <div class="col-2">visualizzazioni</div>
-                                        <div class="col-2 text-end">3:32</div>
-                                    </div> -->
                                 </div>
 
 
                                 <div class="col-12 col-lg-4">
-                                    <div class="row">
-                                        <h3 class="mb-4 fs-5">Brani che ti piacciono</h3>
-                                        <div class="col-4 text-center">
-                                            <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61Ixi8cSCfL._AC_SY355_.jpg"
-                                                alt="" height="20%" />
-                                        </div>
-                                        <div class="col-8">
-                                            <p>Hai messo Mi piace a 11 brani</p>
-                                            <p>di ARTISTA.NAME</p>
-                                        </div>
+                                    <h3 class="mb-4 fs-5">Brani che ti piacciono</h3>
+                                    <div class="row" id="likeArtista">
+
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <h3>Scopri la discografia dell'artista</h3>
+                        <div class="row" id="listaAlbum">
+
                         </div>
                     </div>
                 </div>
             </div>
             <!-- ----------------------------------------------------------PARTE DESTRA---------------------------------------------------------- -->
-            <div class="col d-none d-sm-block d-sm-none d-md-block col-2 bg-black pt-2" id="right">
+            <div class="col d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block col-2 bg-black pt-2" id="right">
                 <div class="d-flex justify-content-between">
                     <p class="fw-bolder">Attività amici</p>
                     <div>

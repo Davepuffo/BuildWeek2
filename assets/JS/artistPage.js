@@ -1,6 +1,14 @@
 const ARTISTA_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 const artistaId = new URLSearchParams(window.location.search).get("id")
 
+function formatDuration(durationInSeconds) {
+    const minutes = Math.floor(durationInSeconds / 60);
+    const seconds = durationInSeconds % 60;
+    const secondsString = seconds.toFixed(0).padStart(2, '0');
+    return `${minutes}:${secondsString}`;
+}
+
+
 const inserisciTitolo = function (artist) {
     let prendiTesto = document.getElementById('titoloArtista')
     prendiTesto.style.backgroundImage = `"ARTISTA_URL(${artist.picture})"`;
@@ -42,7 +50,7 @@ const inserisciCanzoni = function (canzone) {
                 <p class="m-0">${element.title}</p>
                 <p class="m-0">${element.rank}</p>
             </div>
-            <div class="col-2 text-end">${Math.floor(element.duration / 60)}</div>
+            <div class="col-2 text-end">${formatDuration(element.duration)}</div>
         </div>
     </button>
         `;

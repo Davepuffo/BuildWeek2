@@ -19,7 +19,8 @@ function formatDuration(durationInSeconds) {
 const showAlbum = function (album) {
     let albumBody = document.getElementsByClassName('album__body')[0]
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    albumBody.style.backgroundColor = "#" + randomColor
+    let aBody = document.getElementsByClassName('middleAlbumPage')[0]
+    aBody.style.backgroundColor = "#" + randomColor
     console.log(albumBody)
     albumBody.innerHTML = `<div><img class="album__img shadow img-fluid ms-1 my-2 border" src="${album.cover_medium}" alt="${album.title}">
 </div>

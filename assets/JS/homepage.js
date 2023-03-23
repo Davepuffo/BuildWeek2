@@ -123,6 +123,8 @@ const getDataPop = function () {
         })
         .then((data) => {
             displayDataPop(data.data)
+            displayInEvidenza(data.data)
+            console.log(data.data)
         })
         .catch((err) => {
             console.log(err)
@@ -150,6 +152,33 @@ const getDataIndie = function () {
 }
 
 getDataIndie()
+
+// sezione in evidenza
+
+displayInEvidenza = function (data) {
+    let nuovoSingolo = document.getElementById('nuovoSingolo')
+    nuovoSingolo.innerHTML = `
+    <img class="img_singolo_in_evidenza m-2" src="${data[i].album.cover_medium}" alt="${data[i].album.title}" />
+
+    <div class="testi">
+        <p class="titolo_album_in_evidenza mt-2 mb-0 p-0">Album</p>
+        <p class="titolo_singolo_in_evidenza fs-1 mb-1">${data[i].title}</p>
+        <p class="autore_singolo_in_evidenza fs-5">${data[i].artist.name}</p>
+        <p class="span_autore_singolo_in_evidenza">
+            Ascolta il nuovo singolo di
+            <span>${data[i].artist.name}</span>
+        </p>
+
+        <div class="pulsanti d-flex align-items-center">
+            <a class="pulsante_play" href="">Play</a>
+            <a class="pulsante_salva" href="">Salva</a>
+            <span class="menu_pulsanti ">&middot;&middot;&middot;</span>
+        </div>
+    </div>
+    `
+}
+
+
 
 
 //codice icona volume

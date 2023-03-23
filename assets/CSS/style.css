@@ -129,7 +129,7 @@ main #section_1 .album_in_evidenza .img_testi {
 
 .pulsante_play,
 .pulsante_salva {
-    padding: 15px 35px;
+    padding: 10px 25px;
     font-weight: 700;
     border-radius: 50px;
     text-decoration: none;
@@ -154,10 +154,20 @@ main #section_1 .album_in_evidenza .img_testi {
     font-size: 0.875rem;
 }
 
-.album_in_evidenza .testi .pulsanti .span_autore_singolo_in_evidenza {
+.album_in_evidenza .testi .pulsanti {
     padding: 3px;
     font-size: 1.2rem;
     letter-spacing: 1.7px;
+}
+
+.span_autore_singolo_in_evidenza{
+    font-size: 12px !important;
+}
+
+.span_autore_singolo_in_evidenza span {
+    color: white !important;
+    text-transform: none !important;
+    font-size: 12px !important;
 }
 
 .album_in_evidenza .nascondi {
@@ -165,6 +175,10 @@ main #section_1 .album_in_evidenza .img_testi {
     text-transform: uppercase;
     color: #686868;
     font-size: 0.7rem;
+}
+
+.nascondi {
+    float: right;
 }
 
 .preferiti {
@@ -253,6 +267,15 @@ main #section_2 .testi {
   font-size: 3em;
 }
 
+
+.titolo_album_in_evidenza {
+    font-size: 10px !important;
+}
+
+.transform:hover {
+    transform: scale(1.1);
+    transition: all 1s ease;
+}
 /* ----------------------------------------------------------barra laterale destra---------------------------------------------------------- */
 .attivitaAmiciNome {
     font-weight: bold;

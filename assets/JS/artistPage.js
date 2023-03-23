@@ -1,6 +1,14 @@
 const ARTISTA_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 const artistaId = new URLSearchParams(window.location.search).get("id")
-const prendiFooter = document.getElementById('playerFooter')
+const prendiFooter = document.getElementById('playerFooter');
+let music = '';
+
+function formatDuration(durationInSeconds) {
+    const minutes = Math.floor(durationInSeconds / 60);
+    const seconds = durationInSeconds % 60;
+    const secondsString = seconds.toFixed(0).padStart(2, '0');
+    return `${minutes}:${secondsString}`;
+}
 
 const inserisciTitolo = function (artist) {
     let prendiTesto = document.getElementById('titoloArtista')
@@ -27,11 +35,6 @@ const inserisciTitolo = function (artist) {
                                         </div>`
 }
 
-function playMusic(x) {
-    let music = new Audio(x)
-    music.play()
-}
-
 const inserisciCanzoni = function (canzone) {
     let prendiCanzoni = document.getElementById('listaCanzoni')
     canzone.forEach(element => {
@@ -48,15 +51,20 @@ const inserisciCanzoni = function (canzone) {
                 <p class="m-0">${element.title}</p>
                 <p class="m-0">${element.rank}</p>
             </div>
-            <div class="col-2 text-end">${Math.floor(element.duration / 60)}</div>
+            <div class="col-2 text-end">${formatDuration(element.duration)}</div>
         </div>
     </button>
         `;
         prendiCanzoni.appendChild(newSong)
-        console.log(newSong)
     })
 }
 
+function playMusic(x) {
+    music = new Audio(x)
+    music.play()
+    let titolo1 = document.getElementById('titoloFooter1')
+    titolo1.innerHTML = 'ciao'
+}
 
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
@@ -125,28 +133,6 @@ fetch(ARTISTA_URL + artistaId)
             })
             .then((song) => {
                 console.log(song)
-                inserisciCanzoni(song)
-            })
-    })
-    .catch((err) => {
-        console.log(err)
-    })
-
-
-fetch(ARTISTA_URL + artistaId)
-    .then((response) => {
-        return response.json()
-    })
-    .then((data) => {
-        const tracklist_url = data.tracklist
-        fetch(tracklist_url)
-            .then((response2) => {
-                return response2.json()
-            })
-            .then((data2) => {
-                return data2.data
-            })
-            .then((song) => {
                 inserisciCanzoni(song)
             })
     })

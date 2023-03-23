@@ -551,9 +551,20 @@ i {
   margin: 0;
   margin-bottom: 1px;
   margin-top: 10px;
+  padding-left: 0;
   
 }
-
+.primi_tre li a {
+  flex-direction: column;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  font-size: 12px;
+  margin: 0;
+  color: white;
+  text-decoration: none;
+}
 header nav {
   border-bottom: 1px solid #fff;
   line-height: 2.2rem;
@@ -562,6 +573,8 @@ header nav {
 
 header nav ul{
     margin: 0%;
+    padding: 0%;
+   
     
 }
 
@@ -602,6 +615,9 @@ header nav ul{
   header nav ul > li:hover {
     opacity: 1;
     transform: scale(1.1) translateX(7px);
+  }
+  .search1{
+    margin-left: 1.5em;
   }
   .cardsHome .item img {
     width: 100%;

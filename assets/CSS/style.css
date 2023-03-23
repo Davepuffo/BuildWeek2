@@ -76,9 +76,7 @@ main #section_1 .arrow {
     margin-bottom: -0.15em;
 }
 
-main #section_1 .contenitore_saluto_icone--icone {
-    display: none;
-}
+
 
 main #section_1 p {
     font-size: 1.2rem;
@@ -131,7 +129,7 @@ main #section_1 .album_in_evidenza .img_testi {
 
 .pulsante_play,
 .pulsante_salva {
-    padding: 15px 35px;
+    padding: 10px 25px;
     font-weight: 700;
     border-radius: 50px;
     text-decoration: none;
@@ -156,10 +154,20 @@ main #section_1 .album_in_evidenza .img_testi {
     font-size: 0.875rem;
 }
 
-.album_in_evidenza .testi .pulsanti .span_autore_singolo_in_evidenza {
+.album_in_evidenza .testi .pulsanti {
     padding: 3px;
     font-size: 1.2rem;
     letter-spacing: 1.7px;
+}
+
+.span_autore_singolo_in_evidenza{
+    font-size: 12px !important;
+}
+
+.span_autore_singolo_in_evidenza span {
+    color: white !important;
+    text-transform: none !important;
+    font-size: 12px !important;
 }
 
 .album_in_evidenza .nascondi {
@@ -167,6 +175,10 @@ main #section_1 .album_in_evidenza .img_testi {
     text-transform: uppercase;
     color: #686868;
     font-size: 0.7rem;
+}
+
+.nascondi {
+    float: right;
 }
 
 .preferiti {
@@ -210,7 +222,7 @@ main #section_2 .testi {
 }
 
 .testi span {
-    font-size: 0.7rem;
+    font-size: 0.9em;
     text-transform: uppercase;
     color: #686868;
 }
@@ -251,6 +263,19 @@ main #section_2 .testi {
     font-weight: 700;
 }
 
+.pulsanti span{
+  font-size: 3em;
+}
+
+
+.titolo_album_in_evidenza {
+    font-size: 10px !important;
+}
+
+.transform:hover {
+    transform: scale(1.1);
+    transition: all 1s ease;
+}
 /* ----------------------------------------------------------barra laterale destra---------------------------------------------------------- */
 .attivitaAmiciNome {
     font-weight: bold;
@@ -266,6 +291,13 @@ main #section_2 .testi {
 }
 
 /* ----------------------------------------------------------Cards rettangolari fisse---------------------------------------------------------- */
+/*.gallery-vertical {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }*/
+
 .gallery-card-vertical {
     height: 50px;
     width: 300px;
@@ -284,8 +316,10 @@ main #section_2 .testi {
 
 /* ----------------------------------------------------------CARDS effetto hoover---------------------------------------------------------- */
 .cardsHome .item {
+    /*min-width: 140px;
+     width: 160px;*/
     height: 100%;
-    padding: 10px;
+    padding: 10px;/*o 15*/
     background-color: #181818;
     border-radius: 6px;
     cursor: pointer;
@@ -358,8 +392,11 @@ i {
 }
 
 #player-small {
-    bottom: 5%;
+    bottom: 10%;
     width: 97%;
+    /*controlla*/
+    height: auto;
+    margin: 0%;
 }
 
 
@@ -443,8 +480,183 @@ i {
         width: 270px;
         margin-left: 30px !important;
     }
+  /*modifiche aggiunte*/
+  .p_mobile {
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-bottom: 0.5em;
+    font-size: 15px;
+  }
+  .p_mobile .Podcast {
+    padding-left: 3.5em;
+  }
+
+  .gallery-card-vertical {
+    height: 50px;
+    width: 200px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(112, 112, 112, 0.226);
+    margin: 8px;
+    border-radius: 10px;
+  }
+
+  .gallery-card-vertical-img {
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+    border-radius: 8px;
+  }
+
+  main #section_1 .album_in_evidenza .img_testi {
+    display: none;
+  }
+  main #section_1 .album_in_evidenza {
+    display: none;
+  }
+  .contenitore_saluto_icone {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contenitore_saluto_icone .contenitore_saluto_icone--icone {
+    display: flex;
+    align-items: center;
+    margin-top: 0.9em;
+    margin-right: 0.6em;
+
+  }
+  .contenitore_saluto_icone .contenitore_saluto_icone--icone ion-icon {
+    margin-left: 10px;
+  }
+  .testi p:first-child{
+    padding-left: 1em;
+  }
+
+  header {
+    color: #fff;
+    background:  linear-gradient(to top, #000000, #060606,#000000,#060606af);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+
+  }
+
+.primi_tre {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  margin-bottom: 1px;
+  margin-top: 10px;
+  
+}
+
+header nav {
+  border-bottom: 1px solid #fff;
+  line-height: 2.2rem;
+  
+}
+
+header nav ul{
+    margin: 0%;
+    
+}
+
+  header nav ul li {
+    flex-direction: column;
+    color: #fff;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    font-size: 12px;
+    margin: 0;
+    
+    
+    
+  }
+  header nav ul li:hover {
+    opacity: 1;
+    transform: scale(1.1) translateX(3px);
+  }
+  header nav ul li ion-icon {
+    font-size: 1.9rem;
+    padding-right: 3px;
+    padding-bottom: 0;
+    color: #fff;
+    opacity: 0.6;
+    transition: 0.5s ease-in-out;
+    
+  }
+  header nav ul li ion-icon:hover {
+    opacity: 1;
+  }
+  header nav ul > li {
+    letter-spacing: 1.7px;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+  }
+  header nav ul > li:hover {
+    opacity: 1;
+    transform: scale(1.1) translateX(7px);
+  }
+  .cardsHome .item img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+  .containerCards{
+    display: flex;
+    flex-direction: column;
+    
+}
+.item {
+    min-width: 140px;
+    width: 97%;
+    padding: 15px;
+    background-color: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+  }
+  .item .play .bi-play-fill {
+    position: absolute;
+    right: 10px;
+    top: -85px;
+    padding: 0em 0.25em;
+    background-color: #1db954;
+    font-size: 1.5em;
+    border-radius: 100%;
+    opacity: 0;
+    transition: all ease 0.4s;
+  }
+
 
 }
+@media only screen and (max-width: 460px) {
+
+    .gallery-card-vertical {
+        height: 50px;
+        width: 130px;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        background-color: rgba(112, 112, 112, 0.226);
+        margin: 8px;
+        border-radius: 10px;
+      }
+      .contenitore_saluto_icone {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
 
 /*  margin bottom album page */
 #listaAlbum {

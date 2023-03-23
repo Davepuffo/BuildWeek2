@@ -269,6 +269,10 @@ main #section_2 .testi {
     font-size: 10px !important;
 }
 
+.transform:hover {
+    transform: scale(1.1);
+    transition: all 1s ease;
+}
 /* ----------------------------------------------------------barra laterale destra---------------------------------------------------------- */
 .attivitaAmiciNome {
     font-weight: bold;

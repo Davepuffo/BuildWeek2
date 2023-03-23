@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home Page Spotify</title>
+    <title>Search Page Spotify</title>
     <link rel="shortcut icon" href="https://www.freeiconspng.com/uploads/spotify-icon-18.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
@@ -36,7 +36,7 @@
                                     class="bi bi-suit-heart-fill me-3 bg-danger rounded p-1"></i>Brani che ti
                                 piacciono</a></li>
                         <li><a href="" class="text-decoration-none text-light"><i
-                                    class="bi bi-bookmark-fill me-3 bg-success rounded p-1"></i>Ituoi episodi</a></li>
+                                    class="bi bi-bookmark-fill me-3 bg-success rounded p-1"></i>I tuoi episodi</a></li>
                     </ul>
                 </div>
 
@@ -89,14 +89,21 @@
             <!-- ----------------------------------------------------------PARTE CENTRALE---------------------------------------------------------- -->
             <div class="col col-12 col-md-9 col-lg-8 p-0" id="middle">
                 <main id="box1">
-                    <div class="d-flex align-items-center justify-content-between bg-dark py-2 sticky-top">
-                        <div class="arrow__Btns ms-3">
+                    <div class="d-none d-md-inline-block d-md-flex flex-row align-items-center justify-content-between bg-dark py-2 sticky-top">
+                        <div class="arrow__Btns ms-3 d-inline-block">
                             <button type="button" class="bg-dark text-white border-0 rounded-circle"><i
                                     class="bi bi-chevron-left"></i></button>
                             <button type="button" class="bg-dark text-white border-0 rounded-circle"><i
                                     class="bi bi-chevron-right"></i></button>
                         </div>
-
+                        <div class="input-group w-50">
+                            <input type="text" class="form-control" />
+                            <div class="input-group-append">
+                              <button class="btn btn-light rounded-0 rounded-end" type="button" id="search">
+                                <i class="bi bi-search text-dark"></i>
+                              </button>
+                            </div>
+                          </div>
                         <div class="dropdown d-flex align-items-center me-2">
                             <button
                                 class="btn btn-sm btn-sm-secondary dropdown-toggle btn-rounded p-3 d-flex align-items-center"
@@ -114,189 +121,79 @@
                             </ul>
                         </div>
                     </div>
-
-                    <section id="section_1" class="section">
-                        <div class="album_in_evidenza my-2 mx-2 bg-secondary bg-gradient bg-opacity-10 d-none d-md-block">
-                            <span class="nascondi p-0 mt-1 mx-2">Nascondi annunci</span>
-                            <div class="img_testi" id="nuovoSingolo">
-                                <!-- <img class="img_singolo_in_evidenza m-2" src="https://picsum.photos/200" alt="#" />
-
-                                <div class="testi">
-                                    <p class="titolo_album_in_evidenza mt-2">Album</p>
-                                    <p class="titolo_singolo_in_evidenza"></p>
-                                    <p class="autore_singolo_in_evidenza"></p>
-                                    <p>
-                                        Ascolta il nuovo singolo di
-                                        <span class="span_autore_singolo_in_evidenza"></span>
-                                    </p>
-
-                                    <div class="pulsanti d-flex align-items-center">
-                                        <a class="pulsante_play" href="">Play</a>
-                                        <a class="pulsante_salva" href="">Salva</a>
-                                        <span class="menu_pulsanti ">&middot;&middot;&middot;</span>
-                                    </div>
-                                </div> -->
+                    <div class="d-block d-md-none mt-2">
+                        <h5 class="mx-3">Cerca</h5>
+                        <div class="input-group m-auto" style="max-width:90%;">
+                            <input type="text" class="form-control" />
+                            <div class="input-group-append">
+                              <button class="btn btn-light rounded-0 rounded-end" type="button" id="search">
+                                <i class="bi bi-search text-dark"></i>
+                              </button>
                             </div>
-
-                        </div>
-
-                        <div class="contenitore_saluto_icone">
-                            <p id="saluto"></p>
-                            <div class="contenitore_saluto_icone--icone">
-                                <ion-icon name="notifications-outline"></ion-icon>
-                                <ion-icon name="time-outline"></ion-icon>
-                                <ion-icon name="settings-outline"></ion-icon>
+                          </div>
+                    </div>
+                    <section>
+                        <h5 class="mx-3 my-3 d-none" id="titoloRicerca"> I risultati della tua ricerca</h5>
+                        <div class="row" id="results"></div>
+                      </section>
+                    <section class="mt-5" id="sfoglia">
+                        <h5 class="mx-3"> Sfoglia tutto</h5>
+                        <div class="row mt-3 mx-2 flex-wrap d-flex justify-content-center">
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/1.jpg" alt="cover1" class="rounded-2 img-fluid transform" width="200px">
                             </div>
-                        </div>
-
-                        <div class="preferiti"></div>
-                    </section>
-
-                    <section class="container-fluid">
-                        <div class="gallery-vertical row justify-content-around">
-                            <div class="gallery-card-vertical col col-12 col-lg-2 col-xl-1">
-                                <img class="gallery-card-vertical-img"
-                                    src="https://www.amica.it/wp-content//wp-content/gallery/le-copertine-degli-album-stranieri-in-uscita-nellautunno-2019/Mika_cover-nuovo-album-041019.JPG"
-                                    alt="">
-                                <span>early stage emily syndrome (sett-ott 2022)</span>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/2.jpg" alt="cover2" class="rounded-2 img-fluid transform" width="200px">
                             </div>
-    
-                            <div class="gallery-card-vertical col col-12 col-lg-2 col-xl-1">
-                                <img class="gallery-card-vertical-img"
-                                    src="https://d1csarkz8obe9u.cloudfront.net/themedlandingpages/tlp_hero_album-cover-art-73ab5b3d9b81f442cb2288630ab63acf-1602178816.jpg"
-                                    alt="">
-                                <span>Be the young</span>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/3.jpg" alt="cover3" class="rounded-2 img-fluid transform" width="200px">
                             </div>
-    
-                            <div class="gallery-card-vertical col col-12 col-lg-2 col-xl-1">
-                                <img class="gallery-card-vertical-img"
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcxYrd7tRiolwAjjCiXkt-BH5M0vgSg4ve1w&usqp=CAU"
-                                    alt="">
-                                <span>saggio vibes &#128131 &#129648</span>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/4.jpg" alt="cover4" class="rounded-2 img-fluid transform" width="200px">
                             </div>
-    
-                            <div class="gallery-card-vertical col col-12 col-lg-2 col-xl-1">
-                                <img class="gallery-card-vertical-img"
-                                    src="https://static.hiphopdx.com/2017/04/Kendrick-Lamar-Damn-album-cover-592x444.jpg"
-                                    alt="">
-                                <span>(Revenge) Training Arc &#129421</span>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/5.jpg" alt="cover5" class="rounded-2 img-fluid transform" width="200px">
                             </div>
-    
-                            <div class="gallery-card-vertical col col-12 col-lg-2 col-xl-1">
-                                <img class="gallery-card-vertical-img"
-                                    src="https://cdn.dribbble.com/users/702789/screenshots/16900790/media/628a8bb9f58f4feaea51367fc58b32a3.png?compress=1&resize=400x300"
-                                    alt="">
-                                <span>Brani che ti piacciono </span>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/6.jpg" alt="cover6" class="rounded-2 img-fluid transform" width="200px">
                             </div>
-    
-                            <div class="gallery-card-vertical col col-12 col-lg-2 col-xl-1">
-                                <img class="gallery-card-vertical-img"
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa4KjWjuGS2ZCV0jVHdE3oLdtkNXou8QC3dQ&usqp=CAU"
-                                    alt="">
-                                <span>honey and glass (nov-dic 2021)</span>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/13.jpg" alt="cover1" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/14.jpg" alt="cover2" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/15.jpg" alt="cover3" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/16.jpg" alt="cover4" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/17.jpg" alt="cover5" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/18.jpg" alt="cover6" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/7.jpg" alt="cover7" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/8.jpg" alt="cover8" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/9.jpg" alt="cover9" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/10.jpg" alt="cover10" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/11.jpg" alt="cover11" class="rounded-2 img-fluid transform" width="200px">
+                            </div>
+                            <div class="col col-6 col-md-3 col-lg-2 mb-2 p-2">
+                                <img src="assets/img/cover/12.jpg" alt="cover12" class="rounded-2 img-fluid transform" width="200px">
                             </div>
                         </div>
-                    </section>
-
-                    <section id="section_2" class="section">
-                        <div class="testi mx-1 mt-4 mb-3">
-                            <p class="align-self-center m-0">Altro di ciò che ti piace</p>
-                            <span class="align-self-center mx-2">Visualizza tutto</span>
-                        </div>
-                        <div class="container-fluid">
-                            <h3 class="mx-1">Rock</h3>
-                            <div class="containerCards mb-4 row" id="row_rock">
-                            </div>
-
-                            <h3 class="mx-1">Pop</h3>
-                            <div class="containerCards mb-4 row" id="row_pop">
-                            </div>
-
-                            <h3 class="mx-1">Indie</h3>
-                            <div class="containerCards mb-4 row" id="row_indie">
-                            </div>
-                        </div>
-
-                        <!-- <div class="cardsHome m-1">
-                                <div class="item">
-                                    <img src="https://picsum.photos/200" />
-                                    <div class="play">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <h4>Titolo Prova</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                            <div class="cardsHome m-1">
-                                <div class="item">
-                                    <img src="https://picsum.photos/200" />
-                                    <div class="play">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <h4>Titolo Prova</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                            <div class="cardsHome m-1">
-                                <div class="item">
-                                    <img src="https://picsum.photos/200" />
-                                    <div class="play">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <h4>Titolo Prova</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                            <div class="cardsHome m-1">
-                                <div class="item">
-                                    <img src="https://picsum.photos/200" />
-                                    <div class="play">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <h4>Titolo Prova</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                            <div class="cardsHome m-1">
-                                <div class="item">
-                                    <img src="https://picsum.photos/200" />
-                                    <div class="play">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <h4>Titolo Prova</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                            <div class="cardsHome m-1">
-                                <div class="item">
-                                    <img src="https://picsum.photos/200" />
-                                    <div class="play">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <h4>Titolo Prova</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                            <div class="cardsHome m-1">
-                                <div class="item">
-                                    <img src="https://picsum.photos/200" />
-                                    <div class="play">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <h4>Titolo Prova</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                            <div class="cardsHome m-1">
-                                <div class="item">
-                                    <img src="https://picsum.photos/200" />
-                                    <div class="play">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <h4>Titolo Prova</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div> -->
                     </section>
                 </main>
             </div>
@@ -412,7 +309,7 @@
         </div>
         <!-- end of player bar schermi piccoli -->
     </footer>
-    <script src="assets/JS/homepage.js"></script>
+    <script src="assets/JS/search.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>

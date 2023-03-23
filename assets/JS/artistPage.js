@@ -5,7 +5,7 @@ const inserisciTitolo = function (artist) {
     let prendiTesto = document.getElementById('titoloArtista')
     prendiTesto.style.backgroundImage = `"ARTISTA_URL(${artist.picture})"`;
     prendiTesto.innerHTML = `
-    <p>
+    <p class="mt-2 pt-4">
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="blue"
         class="bi bi-patch-check-fill" viewBox="0 0 16 16">
         <path
@@ -14,8 +14,8 @@ const inserisciTitolo = function (artist) {
     Artista verificato
 </p>
 </div>
-<h1 class="z-index-1">${artist.name}</h1>
-<p>${artist.nb_fan} ascoltatori mensili</p>`
+<h1 class="z-index-1 pt-2">${artist.name}</h1>
+<p class="pb-4">${artist.nb_fan} ascoltatori mensili</p>`
     let likeArtista = document.getElementById('likeArtista')
     likeArtista.innerHTML = `
     <div class="col-4 text-center">

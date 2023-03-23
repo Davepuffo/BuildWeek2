@@ -273,6 +273,12 @@ main #section_2 .testi {
     transform: scale(1.1);
     transition: all 1s ease;
 }
+
+#titoloArtista {
+    background: #1cd760;
+    background: linear-gradient(180deg, #1cd760 0%, rgba(0,0,0,1) 100%);
+}
+
 /* ----------------------------------------------------------barra laterale destra---------------------------------------------------------- */
 .attivitaAmiciNome {
     font-weight: bold;

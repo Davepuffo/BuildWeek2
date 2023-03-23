@@ -208,7 +208,7 @@ main #section_2 .testi {
 }
 
 .testi span {
-    font-size: 0.7rem;
+    font-size: 3em;
     text-transform: uppercase;
     color: #686868;
 }

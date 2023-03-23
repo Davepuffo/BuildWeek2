@@ -1,9 +1,10 @@
 const ARTISTA_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 const artistaId = new URLSearchParams(window.location.search).get("id")
+const prendiFooter = document.getElementById('playerFooter')
 
 const inserisciTitolo = function (artist) {
     let prendiTesto = document.getElementById('titoloArtista')
-    prendiTesto.style.backgroundImage = `"ARTISTA_URL(${artist.picture})"`;
+    prendiTesto.style.backgroundImage = `url(${artist.picture})`;
     prendiTesto.innerHTML = `
     <p>
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="blue"
@@ -26,12 +27,17 @@ const inserisciTitolo = function (artist) {
                                         </div>`
 }
 
+function playMusic(x) {
+    let music = new Audio(x)
+    music.play()
+}
+
 const inserisciCanzoni = function (canzone) {
     let prendiCanzoni = document.getElementById('listaCanzoni')
     canzone.forEach(element => {
         let newSong = document.createElement('li');
         newSong.innerHTML = `
-        <button class="w-100 bg-black text-white border border-0">
+        <button onclick="playMusic(\'${element.preview}\')" class="canzonePlay w-100 bg-black text-white border border-0">
         <div class="row align-items-center my-2">
             <div class="col-2 d-flex justify-content-center">
                 <img src="${element.album.cover_small}"
@@ -47,14 +53,15 @@ const inserisciCanzoni = function (canzone) {
     </button>
         `;
         prendiCanzoni.appendChild(newSong)
-    });
+        console.log(newSong)
+    })
 }
+
 
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 const riempiAlbum = function (album) {
     const prendiLista = document.getElementById('listaAlbum')
-    console.log(prendiLista)
     for (i = 0; i < album.length && i < 6; i++) {
         let newAlbum = document.createElement('div');
         newAlbum.className += " col col-12 col-md-4 col-lg-3 col-xxl-2 d-flex justify-content-center  mb-2"
@@ -80,7 +87,6 @@ const albumArtista = function (album) {
             return response3.json()
         })
         .then((data3) => {
-            console.log(data3)
             riempiAlbum(data3.data)
         })
         .catch((err) => {
@@ -101,6 +107,9 @@ fetch(ARTISTA_URL + artistaId)
         console.log(err)
     })
 
+const prendiBtn = document.getElementsByClassName('canzonePlay')
+
+
 fetch(ARTISTA_URL + artistaId)
     .then((response) => {
         return response.json()
@@ -115,9 +124,11 @@ fetch(ARTISTA_URL + artistaId)
                 return data2.data
             })
             .then((song) => {
+                console.log(song)
                 inserisciCanzoni(song)
             })
     })
     .catch((err) => {
         console.log(err)
     })
+

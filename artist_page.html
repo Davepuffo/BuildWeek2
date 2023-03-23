@@ -187,11 +187,12 @@
             </div>
         </div>
     </div>
-
+    <button onclick=""></button>
     <!-- ----------------------------------------------------------PLAYER---------------------------------------------------------- -->
     <footer>
         <!-- player bar schermi grandi-->
-        <div class="container-fluid fixed-bottom bg-dark text-light border-top border-light d-none d-sm-block">
+        <div id="playerFooter"
+            class="container-fluid fixed-bottom bg-dark text-light border-top border-light d-none d-sm-block">
             <div class="row justify-content-between p-1">
                 <div
                     class="col col-12 col-md-4 d-flex align-items-center justify-content-center justify-content-md-start">
@@ -220,11 +221,7 @@
                 </div>
                 <div
                     class="col col-12 col-md-4 d-flex align-items-center justify-content-center justify-content-md-end">
-                    <div class="me-3">
-                        <i class="bi bi-mic fs-5 px-1 d-none d-md-inline"></i>
-                        <i class="bi bi-collection-play fs-5 px-1  d-none d-md-inline"></i>
-                        <i class="bi bi-pc-display fs-5 px-1"></i>
-                    </div>
+
                     <div class="volume-bar d-flex justify-content-center align-items-center me-3">
                         <i class="bi bi-volume-up fs-3"></i>
                         <input type="range" min="0" max="100" value="50" id="volume-control">

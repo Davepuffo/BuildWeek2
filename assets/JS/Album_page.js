@@ -2,6 +2,12 @@ const ALBUM_URL = ' https://striveschool-api.herokuapp.com/api/deezer/album/'
 let albumId = new URLSearchParams(window.location.search).get('id')
 console.log('Id', albumId)
 
+function generateRandomGradient() {
+    var randomColor1 = "#" + Math.floor(Math.random() * 16777215).toString(16); // genera un colore casuale in esadecimale
+    var gradient = "linear-gradient(180deg, " + randomColor1 + " 0%, rgba(0,0,0,1) 100%)";
+    return gradient;
+}
+
 function formatDuration(durationInSeconds) {
     const minutes = Math.floor(durationInSeconds / 60);
     const seconds = durationInSeconds % 60;
@@ -12,7 +18,8 @@ function formatDuration(durationInSeconds) {
 
 const showAlbum = function (album) {
     let albumBody = document.getElementsByClassName('album__body')[0]
-    albumBody.style.backgroundImage = `url(${album.cover_big}), linear-gradient(180deg, rgba(0, 0, 0, 0.3967517401392111) 0%, rgba(0, 0, 0, 1) 25%); `
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    albumBody.style.backgroundColor = "#" + randomColor
     console.log(albumBody)
     albumBody.innerHTML = `<div><img class="album__img shadow img-fluid ms-1 my-2 border" src="${album.cover_medium}" alt="${album.title}">
 </div>

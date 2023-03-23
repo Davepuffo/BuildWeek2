@@ -420,15 +420,17 @@ i {
 }
 
 /*
+.album__body {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 .album__info {
     margin-top: 101px !important;
 }
 
 /*
-.album__body {
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 .album__body::before {
     background: rgb(0, 0, 0);

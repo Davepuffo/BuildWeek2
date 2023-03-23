@@ -106,8 +106,9 @@
                     <div
                         class="user__Bar user__BarAlbumPage d-flex justify-content-between align-items-center py-2 sticky-top">
                         <div class="arrow__Btns ms-3">
-                            <button type="button" class="bg-dark text-white border-0 rounded-circle"><i
-                                    class="bi bi-chevron-left"></i></button>
+                            <a href="./home_page.html"><button type="button"
+                                    class="bg-dark text-white border-0 rounded-circle"><i
+                                        class="bi bi-chevron-left"></i></button></a>
                             <button type="button" class="bg-dark text-white border-0 rounded-circle"><i
                                     class="bi bi-chevron-right"></i></button>
                         </div>
@@ -131,7 +132,7 @@
                     </div>
 
                     <!-- ⬇️current album⬇️ -->
-                    <div class="album__body ms-1 d-flex mt-5 text-white"><!--
+                    <div class="album__body ms-3 d-flex text-white"><!--
                         <div><img class="album__img shadow-lg img-fluid" src="https://place.dog/150/160"
                                 alt="foto artista">
                         </div>
@@ -155,19 +156,22 @@
                     <!-- ⬇️playlist + upper icons⬇️-->
                     <div class="container-fluid mt-3">
                         <div class="row">
-                            <div class="col-12 col-sm-6 icons__play fs-6 d-flex align-items-center mb-3">
-                                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="green"
-                                        class="bi bi-play-circle-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
-                                    </svg></a>
-                                <div>
+                            <div
+                                class="col-12 col-sm-6 icons__play fs-6 d-flex align-items-center justify-content-between mb-3 ms-2">
+
+                                <div class="d-flex align-items-center">
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                                            fill="green" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+                                        </svg></a>
                                     <i class="bi bi-heart mx-2 text-white opacity-75"></i>
                                     <i class="bi bi-arrow-down-circle mx-2 text-white opacity-75"></i>
                                     <i class="bi bi-three-dots mx-2 text-white opacity-75 three__dots"></i>
                                     <i class="bi bi-three-dots-vertical mx-2 text-white opacity-75 d-sm-none"></i>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 d-flex align-items-center shuf__play">
+                                    <i class="bi bi-shuffle d-block d-sm-none mx-2 opacity-75"></i>
                                     <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
                                             fill="green" class="bi bi-play-circle-fill d-block d-sm-none"
                                             viewBox="0 0 16 16">
@@ -177,7 +181,7 @@
                                 </div>
                             </div>
                             <div class="container div__container mt-1">
-                                <div class="row" id="allSongs">
+                                <div class="row mb-3" id="allSongs">
                                     <div
                                         class="col-12 d-flex justify-content-between border-bottom border-2 border-white border-opacity-25 text-white opacity-75 small">
                                         <div class="col-7">

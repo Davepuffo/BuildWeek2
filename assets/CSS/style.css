@@ -335,6 +335,10 @@ main #section_2 .testi {
     font-weight: 600;
 }
 
+#listaAlbum {
+    margin-bottom: 100px;
+}
+
 /* ----------------------------------------------------------player---------------------------------------------------------- */
 i {
     cursor: pointer;
@@ -366,7 +370,7 @@ i {
 /* ----------------------------------------------------------album page---------------------------------------------------------- */
 .middleAlbumPage {
     width: auto;
-    background-color: #caae48;
+    /*background-color: #caae48;*/
 }
 
 .album__body p img {
@@ -404,14 +408,61 @@ i {
 }
 
 .bi-play-circle-fill {
-    width: 40px;
+    width: 45px;
 }
 
 .div__container {
-    width: 97%;
+    width: 93%;
 }
 
-@media only screen and (max-width: 576px) {
+.song__time {
+    margin-left: -12px;
+}
+
+.art__inf {
+    font-size: 0.7rem !important;
+}
+
+/*
+.album__info {
+    margin-top: 101px !important;
+}
+
+/*
+.album__body {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.album__body::before {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3967517401392111) 0%, rgba(0, 0, 0, 1) 25%);
+}
+
+.album__body {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://placekitten.com/1200/800');
+    background-size: cover;
+}
+
+.album__body::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(152, 66, 211, 0.63);
+}
+*/
+
+
+@media only screen and (max-width: 575px) {
 
     .song__title,
     .song__ripro,
@@ -421,13 +472,16 @@ i {
     .song__time,
     .album__album,
     .anno__ril,
+    .nr__canzoni,
+    .song__index,
     .three__dots {
         display: none;
     }
 
     .artist__title {
-        width: 100% !important;
-        font-size: 1.4rem;
+        width: 300px !important;
+        font-size: 1.2rem;
+        margin-left: -20px !important;
     }
 
     .album__body {
@@ -439,9 +493,38 @@ i {
         flex-direction: column;
     }
 
-    .album__img {
-        width: 270px;
-        margin-left: 30px !important;
+    .album__info {
+        margin-top: -30px !important;
+    }
+
+    .art__inf {
+        font-size: 1.2rem !important;
+        margin-top: 10px !important;
+        margin-left: -7px;
+    }
+
+    .album__annoR {
+        font-size: 1rem;
+    }
+
+    .artist__title p:nth-child(1) {
+        opacity: 100% !important;
+    }
+
+    .div__container {
+        margin-bottom: 50px;
     }
 
 }
+
+/*
+@media only screen and (min-width: 768px) and (max-width: 874px) {
+    .shuf__play {
+        margin-left: 100px !important;
+    }
+
+    .three__dots {
+        margin-right: 5px;
+    }
+
+}*/

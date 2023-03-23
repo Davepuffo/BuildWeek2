@@ -76,9 +76,7 @@ main #section_1 .arrow {
     margin-bottom: -0.15em;
 }
 
-main #section_1 .contenitore_saluto_icone--icone {
-    display: none;
-}
+
 
 main #section_1 p {
     font-size: 1.2rem;
@@ -367,7 +365,7 @@ i {
 }
 
 #player-small {
-    bottom: 5%;
+    bottom: 10%;
     width: 97%;
     /*controlla*/
     height: 8%;
@@ -501,6 +499,7 @@ i {
     align-items: center;
     margin-top: 0.9em;
     margin-right: 0.6em;
+
   }
   .contenitore_saluto_icone .contenitore_saluto_icone--icone ion-icon {
     margin-left: 10px;
@@ -508,7 +507,7 @@ i {
 
   header {
     color: #fff;
-    background: linear-gradient(rgba(0, 0, 0, 0.493), #000);
+    background:  #000;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -579,7 +578,7 @@ header nav ul{
     flex-direction: column;
     
 }
-.cardsHome .item {
+.item {
     min-width: 140px;
     width: 97%;
     padding: 15px;
@@ -588,7 +587,7 @@ header nav ul{
     cursor: pointer;
     transition: all ease 0.4s;
   }
-  .cardsHome .item .play .bi-play-fill {
+  .item .play .bi-play-fill {
     position: absolute;
     right: 10px;
     top: -85px;
@@ -599,6 +598,8 @@ header nav ul{
     opacity: 0;
     transition: all ease 0.4s;
   }
+
+
 }
 @media only screen and (max-width: 460px) {
 

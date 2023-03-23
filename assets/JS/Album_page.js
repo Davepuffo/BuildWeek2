@@ -2,6 +2,13 @@ const ALBUM_URL = ' https://striveschool-api.herokuapp.com/api/deezer/album/'
 let albumId = new URLSearchParams(window.location.search).get('id')
 console.log('Id', albumId)
 
+function formatDuration(durationInSeconds) {
+    const minutes = Math.floor(durationInSeconds / 60);
+    const seconds = durationInSeconds % 60;
+    const secondsString = seconds.toFixed(0).padStart(2, '0');
+    return `${minutes}:${secondsString}`;
+}
+
 
 const showAlbum = function (album) {
     let albumBody = document.getElementsByClassName('album__body')[0]
@@ -26,12 +33,6 @@ const showAlbum = function (album) {
     </div>
 </div>`
 
-    function formatDuration(durationInSeconds) {
-        const minutes = Math.floor(durationInSeconds / 60);
-        const seconds = durationInSeconds % 60;
-        const secondsString = seconds.toFixed(0).padStart(2, '0');
-        return `${minutes}:${secondsString}`;
-    }
 
 }
 
@@ -60,7 +61,7 @@ const showSongs = function (songs) {
         <p class="ripro__numb">${song.rank}</p>
     </div>
     <div class="col-1 text-white opacity-75 song__time">
-        <p class="song__time">${Math.floor(song.duration / 60)}</p>
+        <p class="song__time">${formatDuration(song.duration)}</p>
     </div>`
         playList.appendChild(songElement)
     })

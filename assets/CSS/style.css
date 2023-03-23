@@ -208,7 +208,7 @@ main #section_2 .testi {
 }
 
 .testi span {
-    font-size: 3em;
+    font-size: 0.9em;
     text-transform: uppercase;
     color: #686868;
 }
@@ -247,6 +247,10 @@ main #section_2 .testi {
     margin-bottom: 0;
     padding-top: 1em;
     font-weight: 700;
+}
+
+.pulsanti span{
+  font-size: 3em;
 }
 
 /* ----------------------------------------------------------barra laterale destra---------------------------------------------------------- */

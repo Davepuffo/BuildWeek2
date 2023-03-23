@@ -5,11 +5,6 @@ const ALBUM_URL = ' https://striveschool-api.herokuapp.com/api/deezer/album/'
 let albumId = new URLSearchParams(window.location.search).get('id')
 
 let i = 0;
-
-
-
-
-
 /* SALUTO AUTOMATICO*/
 let contenitore = document.querySelector('#saluto');
 const ora = new Date().getHours();
@@ -137,8 +132,24 @@ const getDataPop = function () {
 getDataPop()
 
 
+const getDataIndie = function () {
+    fetch(URL_indie)
+        .then((response) => {
+            if (response.ok) {
+                return response.json()
+            } else {
+                return new Error('Errore nella gestione della chiamata')
+            }
+        })
+        .then((data) => {
+            displayDataIndie(data.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+}
 
-
+getDataIndie()
 
 
 //codice icona volume
@@ -159,3 +170,4 @@ volumeInput.addEventListener('input', (event) => {
         volumeIcon.classList.add('bi-volume-up');
     }
 });
+

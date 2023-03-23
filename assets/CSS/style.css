@@ -1,50 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 
 * {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 html,
 body {
-  height: 100vh;
+    height: 100vh;
 }
 
 #left {
-  font-size: 0.7em;
-  font-weight: 100;
+    font-size: 0.7em;
+    font-weight: 100;
 }
 
 #fixedList {
-  font-size: 1.3em;
-  font-weight: 500;
+    font-size: 1.3em;
+    font-weight: 500;
 }
 
 /* ----------------------------------------------------------scrollbar sinistra---------------------------------------------------------- */
 .scroller {
-  height: 55vh;
-  overflow: auto;
+    height: 55vh;
+    overflow: auto;
+
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #00000000;
+    background: #00000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4d4d4d;
+    background: #4d4d4d;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4d4d4dad;
+    background: #4d4d4dad;
 }
 
 /* ----------------------------------------------------------scrollbar middle---------------------------------------------------------- */
 #middle {
-  height: 90vh;
-  overflow: auto;
+    height: 100vh;
+    overflow: auto;
 }
 
 #section_2 {
@@ -53,408 +54,406 @@ body {
 
 /* ----------------------------------------------------------parte centrale---------------------------------------------------------- */
 main {
-  width: 100%;
-  height: 100vh;
+    width: 100%;
+    height: 100vh;
 }
 
+
 main #section_1 .arrow {
-  padding: 10px 0;
-  margin-top: 10px;
+    padding: 10px 0;
+    margin-top: 10px;
 }
 
 .btn-rounded {
-  border-radius: 60px;
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
+    border-radius: 60px;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
 }
 
 .btn-rounded img {
-  margin-right: 0;
-  margin-bottom: -0.15em;
+    margin-right: 0;
+    margin-bottom: -0.15em;
 }
 
-.contenitore_saluto_icone--icone {
-  display: none;
-}
+
 
 main #section_1 p {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
-main #section_1 > p {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 20px 0;
+main #section_1>p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 20px 0;
 }
 
 main #section_1 .album_in_evidenza {
-  border-radius: 5px;
-  background-color: #000;
-  display: flex;
-  justify-content: space-between;
+    border-radius: 5px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
 }
 
 main #section_1 .album_in_evidenza img {
-  max-height: 200px;
-  display: flex;
-  align-self: center;
-  padding: 2px;
+    max-height: 200px;
+    display: flex;
+    align-self: center;
+    padding: 2px;
 }
 
 main #section_1 .album_in_evidenza .img_testi {
-  display: flex;
+    display: flex;
 }
 
 .testi p:first-child {
-  text-transform: uppercase;
-  font-size: 0.7rem;
+    text-transform: uppercase;
+    font-size: 0.7rem;
 }
 
 .testi p:nth-child(2) {
-  font-size: 2.2rem;
-  font-weight: 700;
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
 .pulsanti {
-  padding: 10px 0px;
+    padding: 10px 0px;
 }
 
-.pulsanti .menu_pulsanti {
-  font-size: 45px;
-  font-weight: 10px;
-  color: white;
+.menu_pulsanti {
+    font-size: 45px;
+    font-weight: 10px;
+    color: white;
+
 }
 
 .pulsante_play,
 .pulsante_salva {
-  padding: 15px 35px;
-  font-weight: 700;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 0.8rem;
+    padding: 15px 35px;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.8rem;
 }
 
 .pulsante_play {
-  margin-right: 5px;
-  color: #000;
-  background-color: #1ed760;
+    margin-right: 5px;
+    color: #000;
+    background-color: #1ed760;
 }
 
 .pulsante_salva {
-  margin-right: 10px;
-  border: 1px solid #4f4f4f;
-  color: white;
+    margin-right: 10px;
+    border: 1px solid #4f4f4f;
+    color: white;
 }
 
 .btn-sm {
-  height: 25px;
-  padding: 0.4rem 0rem;
-  font-size: 0.875rem;
+    height: 25px;
+    padding: 0.40rem 0rem;
+    font-size: 0.875rem;
 }
 
 .album_in_evidenza .testi .pulsanti .span_autore_singolo_in_evidenza {
-  padding: 3px;
-  font-size: 1.2rem;
-  letter-spacing: 1.7px;
+    padding: 3px;
+    font-size: 1.2rem;
+    letter-spacing: 1.7px;
 }
 
 .album_in_evidenza .nascondi {
-  padding: 20px 10px;
-  text-transform: uppercase;
-  color: #686868;
-  font-size: 0.7rem;
+    padding: 20px 10px;
+    text-transform: uppercase;
+    color: #686868;
+    font-size: 0.7rem;
 }
 
 .preferiti {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .preferiti .tre_in_alto,
 .preferiti .tre_in_basso {
-  display: flex;
+    display: flex;
 }
 
 .preferiti .preferito {
-  width: 32%;
-  background-color: #2c2c2c;
-  border-radius: 5px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 5px;
+    width: 32%;
+    background-color: #2c2c2c;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px;
 }
 
 main #section_1 .preferiti .preferito img {
-  width: 25%;
-  max-width: 100px;
-  padding: 2px;
+    width: 25%;
+    max-width: 100px;
+    padding: 2px;
 }
 
 main #section_1 .preferiti .preferito .testi {
-  padding: 5px 10px;
+    padding: 5px 10px;
 }
 
 main #section_2 .testi {
-  font-size: 0.8rem;
-  display: flex;
-  justify-content: space-between;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .testi p {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .testi span {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: #686868;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #686868;
 }
 
 .altri_preferiti {
-  display: flex;
+    display: flex;
 }
 
 .altro_preferito {
-  width: 20%;
-  background-color: #171717;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 10px;
+    width: 20%;
+    background-color: #171717;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
 }
 
 .altro_preferito .riga-sotto {
-  display: none;
+    display: none;
 }
 
 .altro_preferito img {
-  width: 100%;
+    width: 100%;
 }
 
 .altro_preferito p,
 .altro_preferito span {
-  font-size: 0.8rem;
+    font-size: 0.8rem;
 }
 
 .altro_preferito span {
-  color: #686868;
+    color: #686868;
 }
 
 #saluto {
-  padding-left: 0.9em;
-  margin-bottom: 0;
-  padding-top: 1em;
-  font-weight: 700;
+    padding-left: 0.9em;
+    margin-bottom: 0;
+    padding-top: 1em;
+    font-weight: 700;
 }
 
 /* ----------------------------------------------------------barra laterale destra---------------------------------------------------------- */
 .attivitaAmiciNome {
-  font-weight: bold;
-  font-size: 13px;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .attivitaAmici {
-  font-size: 11px;
+    font-size: 11px;
 }
 
 .attivitaAmiciOre {
-  font-size: 10px;
+    font-size: 10px;
 }
 
 /* ----------------------------------------------------------Cards rettangolari fisse---------------------------------------------------------- */
-
-.gallery-vertical {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+/*.gallery-vertical {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }*/
 
 .gallery-card-vertical {
-  height: 50px;
-  width: 300px;
-  font-size: 11px;
-  display: flex;
-  align-items: center;
-  background-color: rgba(112, 112, 112, 0.226);
-  margin: 8px;
+    height: 50px;
+    width: 300px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(112, 112, 112, 0.226);
+    margin: 8px;
 }
 
 .gallery-card-vertical-img {
-  height: 50px;
-  width: 50px;
-  margin-right: 20px;
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
 }
 
 /* ----------------------------------------------------------CARDS effetto hoover---------------------------------------------------------- */
 .cardsHome .item {
-  min-width: 140px;
-  width: 160px;
-  padding: 15px;
-  background-color: #181818;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all ease 0.4s;
+    /*min-width: 140px;
+     width: 160px;*/
+    height: 100%;
+    padding: 10px;/*o 15*/
+    background-color: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all ease 0.4s;
 }
 
 .cardsHome .item:hover {
-  background-color: #252525;
+    background-color: #252525;
 }
 
 .cardsHome .item img {
-  width: 100%;
-  border-radius: 6px;
-  margin-bottom: 10px;
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
 }
 
 .cardsHome .item .play {
-  position: relative;
+    position: relative;
 }
 
 .cardsHome .item .play .bi-play-fill {
-  position: absolute;
-  right: 10px;
-  top: -60px;
-  padding: 0em 0.25em;
-  background-color: #1db954;
-  font-size: 1.5em;
-  border-radius: 100%;
-  opacity: 0;
-  transition: all ease 0.4s;
+    position: absolute;
+    right: 10px;
+    top: -60px;
+    padding: 0em 0.25em;
+    background-color: #1db954;
+    font-size: 1.5em;
+    border-radius: 100%;
+    opacity: 0;
+    transition: all ease 0.4s;
 }
 
 .cardsHome .item:hover .play .bi-play-fill {
-  opacity: 1;
-  transform: translateY(-20px);
+    opacity: 1;
+    transform: translateY(-20px);
 }
 
 .cardsHome .item h4 {
-  font-size: 15px;
-  margin-bottom: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
 }
 
 .cardsHome .item p {
-  color: #989898;
-  font-size: 12px;
-  line-height: 20px;
-  font-weight: 600;
+    color: #989898;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
 }
 
 /* ----------------------------------------------------------player---------------------------------------------------------- */
 i {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .playbar {
-  color: white;
+    color: white;
 }
 
 .playbar {
-  width: 20em;
-  margin: 0 0.5em;
-  border: solid 0.12em lightgrey;
-  border-radius: 10%;
+    width: 20em;
+    margin: 0 0.5em;
+    border: solid 0.12em lightgrey;
+    border-radius: 10%;
 }
 
 @media screen and (max-width: 576px) {
-  .playbar {
-    width: 10em;
-  }
+    .playbar {
+        width: 10em;
+    }
 }
 
 #player-small {
-  bottom: 10%;
-  width: 97%;
-  height: 8%;
-  margin: 0%;
+    bottom: 10%;
+    width: 97%;
+    /*controlla*/
+    height: 8%;
+    margin: 0%;
 }
+
 
 /* ----------------------------------------------------------album page---------------------------------------------------------- */
 .middleAlbumPage {
-  width: auto;
-  background-color: #caae48;
+    width: auto;
+    background-color: #caae48;
 }
 
 .album__body p img {
-  width: 20px;
-  height: 20px;
-  border-radius: 80px;
+    width: 20px;
+    height: 20px;
+    border-radius: 80px;
 }
 
 .artist__info {
-  font-size: 0.5rem;
+    font-size: 0.5rem;
 }
 
 .user__Bar img,
 .artist__info img {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .user__BarAlbumPage {
-  background-color: #caae48;
+    background-color: #caae48;
 }
 
 .arrow__Btns i {
-  font-size: 14px;
-  padding: 0;
+    font-size: 14px;
+    padding: 0;
 }
 
 .container-fluid .bi-play-circle {
-  font-size: 40px;
+    font-size: 40px;
 }
 
 .container-fluid {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.3967517401392111) 0%,
-    rgba(0, 0, 0, 1) 25%
-  );
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3967517401392111) 0%, rgba(0, 0, 0, 1) 25%);
 }
 
 .bi-play-circle-fill {
-  width: 40px;
+    width: 40px;
 }
 
 .div__container {
-  width: 97%;
+    width: 97%;
 }
 
 @media only screen and (max-width: 576px) {
-  .song__title,
-  .song__ripro,
-  .bi-clock,
-  .bi-play-circle-fill,
-  .ripro__numb,
-  .song__time,
-  .album__album,
-  .anno__ril,
-  .nr__canzoni,
-  .three__dots {
-    display: none;
-  }
 
-  .artist__title {
-    width: 100% !important;
-    font-size: 1.4rem;
-  }
+    .song__title,
+    .song__ripro,
+    .bi-clock,
+    .bi-play-circle-fill,
+    .ripro__numb,
+    .song__time,
+    .album__album,
+    .anno__ril,
+    .three__dots {
+        display: none;
+    }
 
-  .album__body {
-    flex-direction: column;
-  }
+    .artist__title {
+        width: 100% !important;
+        font-size: 1.4rem;
+    }
 
-  .artist__info {
-    display: flex;
-    flex-direction: column;
-  }
+    .album__body {
+        flex-direction: column;
+    }
 
-  .album__img {
-    width: 270px;
-    margin-left: 30px !important;
-  }
+    .artist__info {
+        display: flex;
+        flex-direction: column;
+    }
 
+    .album__img {
+        width: 270px;
+        margin-left: 30px !important;
+    }
+  /*modifiche aggiunte*/
   .p_mobile {
     padding-top: 2em;
     padding-left: 2em;
@@ -500,6 +499,7 @@ i {
     align-items: center;
     margin-top: 0.9em;
     margin-right: 0.6em;
+
   }
   .contenitore_saluto_icone .contenitore_saluto_icone--icone ion-icon {
     margin-left: 10px;
@@ -507,19 +507,19 @@ i {
 
   header {
     color: #fff;
-    background: linear-gradient(rgba(0, 0, 0, 0.493), #000);
+    background:  #000;
     width: 100%;
     position: fixed;
     bottom: 0;
     z-index: 10;
-    
+
   }
 
 .primi_tre {
   display: flex;
   justify-content: space-around;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   margin-top: 10px;
   
 }
@@ -543,6 +543,7 @@ header nav ul{
     align-items: center;
     transition: 0.5s ease-in-out;
     font-size: 12px;
+    margin: 0;
     
     
     
@@ -554,9 +555,11 @@ header nav ul{
   header nav ul li ion-icon {
     font-size: 1.9rem;
     padding-right: 3px;
+    padding-bottom: 0;
     color: #fff;
     opacity: 0.6;
     transition: 0.5s ease-in-out;
+    
   }
   header nav ul li ion-icon:hover {
     opacity: 1;
@@ -575,7 +578,7 @@ header nav ul{
     flex-direction: column;
     
 }
-.cardsHome .item {
+.item {
     min-width: 140px;
     width: 97%;
     padding: 15px;
@@ -584,7 +587,7 @@ header nav ul{
     cursor: pointer;
     transition: all ease 0.4s;
   }
-  .cardsHome .item .play .bi-play-fill {
+  .item .play .bi-play-fill {
     position: absolute;
     right: 10px;
     top: -85px;
@@ -595,6 +598,8 @@ header nav ul{
     opacity: 0;
     transition: all ease 0.4s;
   }
+
+
 }
 @media only screen and (max-width: 460px) {
 
@@ -609,6 +614,8 @@ header nav ul{
         border-radius: 10px;
       }
 }
+
+
 
 /*  margin bottom album page */
 #listaAlbum {

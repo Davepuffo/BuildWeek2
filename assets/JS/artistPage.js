@@ -1,11 +1,20 @@
 const ARTISTA_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 const artistaId = new URLSearchParams(window.location.search).get("id")
+const prendiFooter = document.getElementById('playerFooter');
+let music = new Audio;
+
+function formatDuration(durationInSeconds) {
+    const minutes = Math.floor(durationInSeconds / 60);
+    const seconds = durationInSeconds % 60;
+    const secondsString = seconds.toFixed(0).padStart(2, '0');
+    return `${minutes}:${secondsString}`;
+}
 
 const inserisciTitolo = function (artist) {
     let prendiTesto = document.getElementById('titoloArtista')
-    prendiTesto.style.backgroundImage = `"ARTISTA_URL(${artist.picture})"`;
+    prendiTesto.style.backgroundImage = `url(${artist.picture})`;
     prendiTesto.innerHTML = `
-    <p class="mt-2 pt-4">
+    <p>
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="blue"
         class="bi bi-patch-check-fill" viewBox="0 0 16 16">
         <path
@@ -14,8 +23,8 @@ const inserisciTitolo = function (artist) {
     Artista verificato
 </p>
 </div>
-<h1 class="z-index-1 pt-2">${artist.name}</h1>
-<p class="pb-4">${artist.nb_fan} ascoltatori mensili</p>`
+<h1 class="z-index-1">${artist.name}</h1>
+<p>${artist.nb_fan} ascoltatori mensili</p>`
     let likeArtista = document.getElementById('likeArtista')
     likeArtista.innerHTML = `
     <div class="col-4 text-center">
@@ -30,31 +39,46 @@ const inserisciCanzoni = function (canzone) {
     let prendiCanzoni = document.getElementById('listaCanzoni')
     canzone.forEach(element => {
         let newSong = document.createElement('li');
-        newSong.innerHTML = `
-        <button class="w-100 bg-black text-white border border-0">
-        <div class="row align-items-center my-2">
-            <div class="col-2 d-flex justify-content-center">
-                <img src="${element.album.cover_small}"
-                    alt="" height="40px" />
-            </div>
-            <div
-                class="col-8 text-start d-flex justify-content-between align-items-center">
-                <p class="m-0">${element.title}</p>
-                <p class="m-0">${element.rank}</p>
-            </div>
-            <div class="col-2 text-end">${Math.floor(element.duration / 60)}</div>
+        let button = document.createElement('button')
+        button.innerHTML =`<div class="row align-items-center my-2">
+        <div class="col-2 d-flex justify-content-center">
+            <img src="${element.album.cover_small}"
+                alt="" height="40px" />
         </div>
-    </button>
-        `;
+        <div
+            class="col-8 text-start d-flex justify-content-between align-items-center">
+            <p class="m-0">${element.title}</p>
+            <p class="m-0">${element.rank}</p>
+        </div>
+        <div class="col-2 text-end">${formatDuration(element.duration)}</div>
+    </div>`
+        button.classList.add('canzonePlay','w-100','bg-black','text-white','border','border-0')
+        button.addEventListener('click',() => playMusic(element))
+        newSong.appendChild(button)
         prendiCanzoni.appendChild(newSong)
-    });
+    })
+}
+
+function playMusic(x) {
+    music.pause()
+    music.src = x.preview
+    music.play()
+    let titolo1 = document.getElementById('titoloFooter1')
+    titolo1.innerHTML =    `             
+    <img src="${x.album.cover_small}" alt="${x.album.title}" class="me-3">
+    <div>
+        <h6 class="mb-0">${x.title}</h6>
+        <p class="mb-0 small"${x.name}</p>
+    </div>
+    <div>
+        <i class="bi bi-heart fs-5 ps-4"></i>
+    </div>`
 }
 
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 const riempiAlbum = function (album) {
     const prendiLista = document.getElementById('listaAlbum')
-    console.log(prendiLista)
     for (i = 0; i < album.length && i < 6; i++) {
         let newAlbum = document.createElement('div');
         newAlbum.className += " col col-12 col-md-4 col-lg-3 col-xxl-2 d-flex justify-content-center  mb-2"
@@ -80,7 +104,6 @@ const albumArtista = function (album) {
             return response3.json()
         })
         .then((data3) => {
-            console.log(data3)
             riempiAlbum(data3.data)
         })
         .catch((err) => {
@@ -101,6 +124,9 @@ fetch(ARTISTA_URL + artistaId)
         console.log(err)
     })
 
+const prendiBtn = document.getElementsByClassName('canzonePlay')
+
+
 fetch(ARTISTA_URL + artistaId)
     .then((response) => {
         return response.json()
@@ -115,6 +141,7 @@ fetch(ARTISTA_URL + artistaId)
                 return data2.data
             })
             .then((song) => {
+                console.log(song)
                 inserisciCanzoni(song)
             })
     })

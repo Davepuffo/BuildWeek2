@@ -54,9 +54,9 @@ const showSongs = function (songs) {
         <div
             class="col-8 text-start d-flex justify-content-between align-items-center">
             <p class="m-0">${song.title}</p>
-            <p class="m-0">${song.rank}</p>
+            <p class="m-0 song__ripro">${song.rank}</p>
         </div>
-        <div class="col-2 text-end">${formatDuration(song.duration)}</div>
+        <div class="col-2 text-end song__time">${formatDuration(song.duration)}</div>
     </div>`
         button.classList.add('w-100', 'bg-transparent', 'text-white', 'border-0')
         button.addEventListener('click', () => playMusic(song))

@@ -95,3 +95,21 @@ if (albumId) {
         })
 }
 
+//codice icona volume
+
+const volumeBar = document.querySelector('.volume-bar');
+const volumeInput = volumeBar.querySelector('input');
+const volumeIcon = volumeBar.querySelector('i');
+
+
+volumeInput.addEventListener('input', (event) => {
+    const volume = parseInt(event.target.value, 10);
+    volumeIcon.classList.remove('bi-volume-up', 'bi-volume-down', 'bi-volume-mute');
+    if (volume === 0) {
+        volumeIcon.classList.add('bi-volume-mute');
+    } else if (volume < 50) {
+        volumeIcon.classList.add('bi-volume-down');
+    } else {
+        volumeIcon.classList.add('bi-volume-up');
+    }
+});

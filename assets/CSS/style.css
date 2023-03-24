@@ -277,6 +277,10 @@ main #section_2 .testi {
     transition: all 1s ease;
 }
 
+#searchSection {
+    padding-bottom: 100px;
+}
+
 /* ----------------------------------------------------------barra laterale destra---------------------------------------------------------- */
 .attivitaAmiciNome {
     font-weight: bold;
@@ -398,7 +402,7 @@ i {
 }
 
 #player-small {
-    bottom: 10%;
+    bottom: 8%;
     width: 97%;
     /*controlla*/
     height: auto;
@@ -462,39 +466,6 @@ i {
 .album__body {
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-
-.album__info {
-    margin-top: 101px !important;
-}
-
-/*
-
-.album__body::before {
-    background: rgb(0, 0, 0);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3967517401392111) 0%, rgba(0, 0, 0, 1) 25%);
-}
-
-.album__body {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('https://placekitten.com/1200/800');
-    background-size: cover;
-}
-
-.album__body::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(152, 66, 211, 0.63);
 }
 */
 
@@ -650,6 +621,10 @@ i {
         opacity: 0.6;
         transition: 0.5s ease-in-out;
         font-size: 12px;
+        margin: 0;
+
+
+
     }
 
     #footer_smartphone ul>li:hover {
@@ -727,10 +702,17 @@ i {
 }
 
 /*  margin bottom album page e artist */
-#listaAlbum, #allSongs {
+#listaAlbum,
+#allSongs {
     margin-bottom: 100px;
 }
 
-#sfoglia{
+#sfoglia {
     padding-bottom: 100px;
+}
+
+.artist__body {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3967517401392111) 0%, rgba(0, 0, 0, 1) 25%);
+
 }

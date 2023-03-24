@@ -12,9 +12,9 @@ function formatDuration(durationInSeconds) {
 
 const inserisciTitolo = function (artist) {
     let prendiTesto = document.getElementById('titoloArtista')
-    prendiTesto.style.backgroundImage = `url(${artist.picture})`;
+    //prendiTesto.style.backgroundImage = `url(${artist.picture})`;
     prendiTesto.innerHTML = `
-    <p>
+    <p class="pt-2">
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="blue"
         class="bi bi-patch-check-fill" viewBox="0 0 16 16">
         <path
@@ -41,11 +41,14 @@ function playMusic(x) {
 }
 
 const inserisciCanzoni = function (canzone) {
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    let aBody = document.getElementsByClassName('container__cont')[0]
+    aBody.style.backgroundColor = "#" + randomColor
     let prendiCanzoni = document.getElementById('listaCanzoni')
     canzone.forEach(element => {
         let newSong = document.createElement('li');
         let button = document.createElement('button')
-        button.innerHTML =`<div class="row align-items-center my-2">
+        button.innerHTML = `<div class="row align-items-center my-2">
         <div class="col-2 d-flex justify-content-center">
             <img src="${element.album.cover_small}"
                 alt="" height="40px" />
@@ -57,8 +60,8 @@ const inserisciCanzoni = function (canzone) {
         </div>
         <div class="col-2 text-end">${formatDuration(element.duration)}</div>
     </div>`
-        button.classList.add('canzonePlay','w-100','bg-black','text-white','border','border-0')
-        button.addEventListener('click',() => playMusic(element))
+        button.classList.add('canzonePlay', 'w-100', 'bg-transparent', 'text-white', 'border', 'border-0')
+        button.addEventListener('click', () => playMusic(element))
         newSong.appendChild(button)
         prendiCanzoni.appendChild(newSong)
     })
@@ -69,7 +72,7 @@ function playMusic(x) {
     music.src = x.preview
     music.play()
     let titolo1 = document.getElementById('titoloFooter1')
-    titolo1.innerHTML =    `             
+    titolo1.innerHTML = `             
     <img src="${x.album.cover_small}" alt="${x.album.title}" class="me-3">
     <div>
         <h6 class="mb-0">${x.title}</h6>
@@ -154,3 +157,23 @@ fetch(ARTISTA_URL + artistaId)
     .catch((err) => {
         console.log(err)
     })
+
+
+    //codice icona volume
+
+const volumeBar = document.querySelector('.volume-bar');
+const volumeInput = volumeBar.querySelector('input');
+const volumeIcon = volumeBar.querySelector('i');
+
+
+volumeInput.addEventListener('input', (event) => {
+    const volume = parseInt(event.target.value, 10);
+    volumeIcon.classList.remove('bi-volume-up', 'bi-volume-down', 'bi-volume-mute');
+    if (volume === 0) {
+        volumeIcon.classList.add('bi-volume-mute');
+    } else if (volume < 50) {
+        volumeIcon.classList.add('bi-volume-down');
+    } else {
+        volumeIcon.classList.add('bi-volume-up');
+    }
+});

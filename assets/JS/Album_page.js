@@ -2,11 +2,6 @@ const ALBUM_URL = ' https://striveschool-api.herokuapp.com/api/deezer/album/'
 let albumId = new URLSearchParams(window.location.search).get('id')
 console.log('Id', albumId)
 
-function generateRandomGradient() {
-    var randomColor1 = "#" + Math.floor(Math.random() * 16777215).toString(16); // genera un colore casuale in esadecimale
-    var gradient = "linear-gradient(180deg, " + randomColor1 + " 0%, rgba(0,0,0,1) 100%)";
-    return gradient;
-}
 
 function formatDuration(durationInSeconds) {
     const minutes = Math.floor(durationInSeconds / 60);
@@ -95,3 +90,21 @@ if (albumId) {
         })
 }
 
+//codice icona volume
+
+const volumeBar = document.querySelector('.volume-bar');
+const volumeInput = volumeBar.querySelector('input');
+const volumeIcon = volumeBar.querySelector('i');
+
+
+volumeInput.addEventListener('input', (event) => {
+    const volume = parseInt(event.target.value, 10);
+    volumeIcon.classList.remove('bi-volume-up', 'bi-volume-down', 'bi-volume-mute');
+    if (volume === 0) {
+        volumeIcon.classList.add('bi-volume-mute');
+    } else if (volume < 50) {
+        volumeIcon.classList.add('bi-volume-down');
+    } else {
+        volumeIcon.classList.add('bi-volume-up');
+    }
+});

@@ -463,39 +463,6 @@ i {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-
-.album__info {
-    margin-top: 101px !important;
-}
-
-/*
-
-.album__body::before {
-    background: rgb(0, 0, 0);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3967517401392111) 0%, rgba(0, 0, 0, 1) 25%);
-}
-
-.album__body {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('https://placekitten.com/1200/800');
-    background-size: cover;
-}
-
-.album__body::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(152, 66, 211, 0.63);
-}
 */
 
 
@@ -780,4 +747,10 @@ i {
 /*  margin bottom album page */
 #listaAlbum {
     margin-bottom: 100px;
+}
+
+.artist__body {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3967517401392111) 0%, rgba(0, 0, 0, 1) 25%);
+
 }

@@ -402,7 +402,7 @@ i {
 }
 
 #player-small {
-    bottom: 9%;
+    bottom: 4em;
     width: 97%;
     /*controlla*/
     height: auto;

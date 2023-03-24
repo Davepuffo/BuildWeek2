@@ -46,7 +46,7 @@ const showSongs = function (songs) {
     songs.forEach(song => {
         let newSong = document.createElement('li');
         let button = document.createElement('button')
-        button.innerHTML = `<div class="row align-items-center my-2">
+        button.innerHTML = `<div class="row align-items-center my-2 title__songName">
         <div class="col-2 d-flex justify-content-center">
             <img src="${song.album.cover_small}"
                 alt="" height="40px" />

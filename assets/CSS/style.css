@@ -700,7 +700,8 @@ i {
         align-items: center;
     }
 
-    #listaCanzoni {
+    #listaCanzoni,
+    .title__songName {
         font-size: 0.7rem;
     }
 }

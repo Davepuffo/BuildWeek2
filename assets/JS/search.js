@@ -59,8 +59,14 @@ window.onload = () => {
   const searchInput = document.querySelector(".form-control")
   searchInput.oninput = (event) => handleSearchQuery(event)
 
+  const searchInputMobile = document.querySelector(".inputMobile")
+  searchInputMobile.oninput = (event) => handleSearchQuery(event)
+
   const searchBtn = document.getElementById('search')
   searchBtn.onclick = () => searchResults()
+
+  const searchMobileBtn = document.getElementById('searchMobile')
+  searchMobileBtn.onclick = () => searchResults()
 
   resultSection.innerHTML=''
 }

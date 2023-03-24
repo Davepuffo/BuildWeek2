@@ -29,7 +29,7 @@ const showAlbum = function (album) {
     <div class="artist__info d-flex ms-2">
         <div class="d-flex mt-4 fs-6 art__inf">
             <img class="rounded-circle mx-1" src="${album.artist.picture_small}" alt="${album.artist.name}">
-            <p class="fw-bold">${album.artist.name}</p>
+            <a class="text-decoration-none text-light" href="./artist_page.html?id=${album.artist.id}"><p class="fw-bold">${album.artist.name}</p></a>
             <p class="anno__ril">&nbsp&#183&nbsp${album.release_date}&nbsp&#183&nbsp</p>
             <p class="nr__canzoni">${album.nb_tracks} songs, <span class="opacity-50 small">${formatDuration(album.duration)}&nbspminutes</span>
             </p>
@@ -121,3 +121,4 @@ volumeInput.addEventListener('input', (event) => {
         volumeIcon.classList.add('bi-volume-up');
     }
 });
+

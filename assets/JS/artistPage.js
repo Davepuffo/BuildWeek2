@@ -55,27 +55,11 @@ const inserisciCanzoni = function (canzone) {
         </div>
         <div class="col-2 text-end">${formatDuration(element.duration)}</div>
     </div>`
-        button.classList.add('w-100', 'bg-black', 'text-white', 'border-0')
+        button.classList.add('w-100', 'bg-transparent', 'text-white', 'border-0')
         button.addEventListener('click', () => playMusic(element))
         newSong.appendChild(button)
         prendiCanzoni.appendChild(newSong)
     })
-}
-
-function playMusic(x) {
-    music.pause()
-    music.src = x.preview
-    music.play()
-    let titolo1 = document.getElementById('titoloFooter1')
-    titolo1.innerHTML = `             
-    <img src="${x.album.cover_small}" alt="${x.album.title}" class="me-3">
-    <div>
-        <h6 class="mb-0">${x.title}</h6>
-        <p class="mb-0 small"${x.artist.name}</p>
-    </div>
-    <div>
-        <i class="bi bi-heart fs-5 ps-4"></i>
-    </div>`
 }
 
 function playMusic(x) {

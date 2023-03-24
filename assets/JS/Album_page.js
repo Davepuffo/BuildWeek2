@@ -81,7 +81,22 @@ function playMusic(x) {
     </div>`
     let titolo2 = document.getElementById('footerMobile')
     titolo2.innerHTML = `<img src="${x.album.cover_small}" class="px-3" height="40px" alt="">${x.title}`
+    let prendiBtnPlayer = document.getElementsByClassName('bi-play-circle')[0]
+    let prendiBtnPlayer2 = document.getElementsByClassName('bi-play-fill')[0]
+    music.addEventListener("play", function () {
+        prendiBtnPlayer.classList.remove("bi-play-circle")
+        prendiBtnPlayer.classList.add("bi-pause-circle")
+        prendiBtnPlayer2.classList.remove("bi-play-fill")
+        prendiBtnPlayer2.classList.add("bi-pause-fill")
+    })
+    music.addEventListener("pause", function () {
+        prendiBtnPlayer.classList.remove("bi-pause-circle")
+        prendiBtnPlayer.classList.add("bi-play-circle")
+        prendiBtnPlayer2.classList.remove("bi-pause-fill")
+        prendiBtnPlayer2.classList.add("bi-play-fill")
+    })
 }
+
 
 if (albumId) {
     fetch(ALBUM_URL + albumId)

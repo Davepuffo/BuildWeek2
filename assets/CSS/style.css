@@ -699,6 +699,10 @@ i {
         justify-content: space-between;
         align-items: center;
     }
+
+    #listaCanzoni {
+        font-size: 0.7rem;
+    }
 }
 
 /*  margin bottom album page e artist */

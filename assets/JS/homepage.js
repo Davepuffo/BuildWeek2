@@ -199,3 +199,4 @@ volumeInput.addEventListener('input', (event) => {
         volumeIcon.classList.add('bi-volume-up');
     }
 });
+

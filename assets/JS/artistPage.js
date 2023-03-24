@@ -35,6 +35,11 @@ const inserisciTitolo = function (artist) {
                                         </div>`
 }
 
+function playMusic(x) {
+    let music = new Audio(x)
+    music.play()
+}
+
 const inserisciCanzoni = function (canzone) {
     let prendiCanzoni = document.getElementById('listaCanzoni')
     canzone.forEach(element => {
@@ -74,6 +79,7 @@ function playMusic(x) {
         <i class="bi bi-heart fs-5 ps-4"></i>
     </div>`
 }
+
 
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 

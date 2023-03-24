@@ -1,7 +1,7 @@
 const ARTISTA_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 const artistaId = new URLSearchParams(window.location.search).get("id")
 const prendiFooter = document.getElementById('playerFooter');
-let music = '';
+let music = new Audio;
 
 function formatDuration(durationInSeconds) {
     const minutes = Math.floor(durationInSeconds / 60);
@@ -39,32 +39,59 @@ const inserisciCanzoni = function (canzone) {
     let prendiCanzoni = document.getElementById('listaCanzoni')
     canzone.forEach(element => {
         let newSong = document.createElement('li');
-        newSong.innerHTML = `
-        <button onclick="playMusic(\'${element.preview}\')" class="canzonePlay w-100 bg-black text-white border border-0">
-        <div class="row align-items-center my-2">
-            <div class="col-2 d-flex justify-content-center">
-                <img src="${element.album.cover_small}"
-                    alt="" height="40px" />
-            </div>
-            <div
-                class="col-8 text-start d-flex justify-content-between align-items-center">
-                <p class="m-0">${element.title}</p>
-                <p class="m-0">${element.rank}</p>
-            </div>
-            <div class="col-2 text-end">${formatDuration(element.duration)}</div>
+        let button = document.createElement('button')
+        button.innerHTML = `<div class="row align-items-center my-2">
+        <div class="col-2 d-flex justify-content-center">
+            <img src="${element.album.cover_small}"
+                alt="" height="40px" />
         </div>
-    </button>
-        `;
+        <div
+            class="col-8 text-start d-flex justify-content-between align-items-center">
+            <p class="m-0">${element.title}</p>
+            <p class="m-0">${element.rank}</p>
+        </div>
+        <div class="col-2 text-end">${formatDuration(element.duration)}</div>
+    </div>`
+        button.classList.add('canzonePlay', 'w-100', 'bg-black', 'text-white', 'border', 'border-0')
+        button.addEventListener('click', () => playMusic(element))
+        newSong.appendChild(button)
         prendiCanzoni.appendChild(newSong)
     })
 }
 
 function playMusic(x) {
-    music = new Audio(x)
+    music.pause()
+    music.src = x.preview
     music.play()
     let titolo1 = document.getElementById('titoloFooter1')
-    titolo1.innerHTML = 'ciao'
+    titolo1.innerHTML = `             
+    <img src="${x.album.cover_small}" alt="${x.album.title}" class="me-3">
+    <div>
+        <h6 class="mb-0">${x.title}</h6>
+        <p class="mb-0 small"${x.name}</p>
+    </div>
+    <div>
+        <i class="bi bi-heart fs-5 ps-4"></i>
+    </div>`
 }
+
+function playMusic(x) {
+    music.pause()
+    music.src = x.preview
+    music.play()
+    let titolo1 = document.getElementById('titoloFooter1')
+    titolo1.innerHTML = `             
+    <img src="${x.album.cover_small}" alt="${x.album.title}" class="me-3">
+    <div>
+        <h6 class="mb-0">${x.title}</h6>
+        <p class="mb-0 small"${x.name}</p>
+    </div>
+    <div>
+        <i class="bi bi-heart fs-5 ps-4"></i>
+    </div>`
+}
+
+
 
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 

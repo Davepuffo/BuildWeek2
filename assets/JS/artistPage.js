@@ -35,11 +35,6 @@ const inserisciTitolo = function (artist) {
                                         </div>`
 }
 
-function playMusic(x) {
-    let music = new Audio(x)
-    music.play()
-}
-
 const inserisciCanzoni = function (canzone) {
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     let aBody = document.getElementsByClassName('container__cont')[0]
@@ -60,7 +55,7 @@ const inserisciCanzoni = function (canzone) {
         </div>
         <div class="col-2 text-end">${formatDuration(element.duration)}</div>
     </div>`
-        button.classList.add('canzonePlay', 'w-100', 'bg-transparent', 'text-white', 'border', 'border-0')
+        button.classList.add('w-100', 'bg-transparent', 'text-white', 'border-0')
         button.addEventListener('click', () => playMusic(element))
         newSong.appendChild(button)
         prendiCanzoni.appendChild(newSong)
@@ -81,7 +76,10 @@ function playMusic(x) {
     <div>
         <i class="bi bi-heart fs-5 ps-4"></i>
     </div>`
+    let titolo2 = document.getElementById('footerMobile')
+    titolo2.innerHTML = `<img src="${x.album.cover_small}" class="px-3" height="40px" alt="">${x.title}`
 }
+
 
 
 const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
@@ -159,7 +157,7 @@ fetch(ARTISTA_URL + artistaId)
     })
 
 
-    //codice icona volume
+//codice icona volume
 
 const volumeBar = document.querySelector('.volume-bar');
 const volumeInput = volumeBar.querySelector('input');

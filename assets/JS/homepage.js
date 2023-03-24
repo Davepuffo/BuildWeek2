@@ -170,16 +170,13 @@ displayInEvidenza = function (data) {
         </p>
 
         <div class="pulsanti d-flex align-items-center">
-            <a class="pulsante_play" href="">Play</a>
+            <button class="pulsante_play" href="">Play</button>
             <a class="pulsante_salva" href="">Salva</a>
             <span class="menu_pulsanti ">&middot;&middot;&middot;</span>
         </div>
     </div>
     `
 }
-
-
-
 
 //codice icona volume
 

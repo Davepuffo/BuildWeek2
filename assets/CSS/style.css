@@ -402,7 +402,7 @@ i {
 }
 
 #player-small {
-    bottom: 8%;
+    bottom: 9%;
     width: 97%;
     /*controlla*/
     height: auto;
@@ -698,6 +698,10 @@ i {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    #listaCanzoni {
+        font-size: 0.7rem;
     }
 }
 
